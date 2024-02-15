@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Saira+Stencil+One&family=Squada+One&display=swap');
+/*
+    font-family: 'Saira Stencil One', sans-serif;
+    font-family: 'Squada One', sans-serif;
+
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-family: 'Saira Stencil One', sans-serif;
+    font-family: 'Squada One', sans-serif;
+*/
+
+
+header {
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E6F0EF;
+    height: 110px;
+}
+
+header .logo img {
+    height: 95px;
+    width: 199px;
+    margin-left: 170px;
+}
+
+header nav ul {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+header nav ul .headright {
+    gap: 30px;
+    margin-right: 160px;
+}
+
+header nav ul li i {
+    color: #0A3641;
+    font-size: 35px;
+}
+
+header nav ul .shortlink {
+    min-width: 70px;
+}
+
+header nav ul li {
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 20px;
+    list-style: none;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul li a {
+    color: #0A3641;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav ul li:hover {
+    background-image: url(/pictures/RainyDays_LogoMountain.png);
+    background-size: 80px 21px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    min-width: 70px;
+}
+
+header nav ul .headright:hover {
+    background-image: none;
+}
+
+header nav ul .activehover {
+    background-image: url(/pictures/RainyDays_LogoMountain.png);
+    background-size: 80px 21px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+header .container-searchbar {
+    display: inline-flex;
+    background-color: white;
+    border-radius: 5px;
+    min-width: 250px;
+    margin-left: 30px;
+}
+
+header .container-searchbar i {
+    margin-top: 5px;
+    opacity: 75%;
+    color: #0A3641;
+}
+
+header input[type=text] {
+    width: 215px;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #0A3641;
+    font-weight: 500;
+}
+
+.sectioncolor {
+    background-color: #E6F0EF;
+    height: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.colorline {
+    position: fixed;
+    z-index: 999999;
+    margin-top: 100px;
+    height: 30px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color: #0A3641;
+}
+
+.colorline p {
+    color: white;
+    display: flex;
+    margin-top: 0px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.toppicturetext {
+    position: relative;
+    display: inline-block;
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 93%;
+    margin-top: 150px;
+}
+
+.toppicturetext img {
+    display: block;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.toppicturelefttext {
+    position: absolute;
+    top: 50%; 
+    left: 19%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-align: center;
+    line-height: 0px;
+}
+
+.toppicturelefttext p{
+    font-size: 60px;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.toppicturelefttext span {
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'Squada One', sans-serif;
+}
+
+.toppicturerighttext {
+    position: absolute;
+    top: 55%; 
+    left: 82.5%;
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-align: center;
+    line-height: 0px;
+    width: 100%;
+}
+
+.toppicturerighttext p {
+    font-size: 65px;   
+    font-family: 'Squada One', sans-serif;
+}
+
+.toppicturerighttext a {
+    color: white;
+    text-decoration: none;
+}
+
+.toppicturerighttext span {
+    font-size: 150px;
+    font-weight: 900;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.ourproductsec {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.ourproductsinline {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.ourproduct1sec {
+    position: relative;
+    display: inline-block;
+    background-image: url(/pictures/RainyDays_Jacket1.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: 15px solid #3D626B;
+    border-radius: 2px;
+}
+
+.ourproduct2sec {
+    position: relative;
+    display: inline-block;
+    background-image: url(/pictures/RainyDays_Jacket2.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: 15px solid #3D626B;
+    border-radius: 2px;
+}
+
+.ourproduct3sec {
+    position: relative;
+    display: inline-block;
+    background-image: url(/pictures/hikingtrail.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 15px solid #3D626B;
+    border-radius: 2px;
+}
+.ourproduct4sec {
+    position: relative;
+    display: inline-block;
+    background-image: url(/pictures/canoeing2.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 15px solid #3D626B;
+    border-radius: 2px;
+}
+.ourproduct1sec img, .ourproduct2sec img, .ourproduct3sec img, .ourproduct4sec img {
+    display: block;
+    width: 330px;
+    height: 450px;
+    opacity: 0;
+    object-fit: contain;
+}
+.ourproductname {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #0A3641; 
+    border-radius: 2px;
+    color: white; 
+    width: 200px;
+    height: 60px;
+    font-size: 30px; 
+    font-weight: bolder;
+    font-family: 'Squada One', sans-serif;
+}
+.ourproduct1sec:hover, .ourproduct2sec:hover {
+    transition: 0.2s;
+    background-size: 120%;
+    border: 15px solid #0A3641;
+}
+.ourproduct3sec:hover {
+    background-size: 170%;
+    transition: 0.2s;
+    border: 15px solid #0A3641;
+    object-fit: cover;
+}
+.ourproduct4sec:hover {
+    background-size: 260%;
+}
+.ourproductname:hover {
+    background-image: url(/pictures/buttontexture.png);
+    background-size: cover;
+    background-position: center bottom;
+    font-size: 35px;
+}
+
+.middlepicturesec {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+}
+
+.middlepicture {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.middlepicture img{
+ width: 100%;
+ height: 350px;
+ object-fit: cover;
+ border-radius: 2px;
+ display: block;
+}
+
+.middlepicturetext {
+    position: absolute;
+    top: 50%; 
+    left: 17%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-align: center;
+}
+
+.middlepicturetextlogo img{
+    height: 100%;
+    width: 280px;
+}
+
+.middlepicturetext p {
+    font-size: 50px;
+    line-height: 5px;
+    margin-top: 20px;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.middlepicturetext span {
+    font-weight: bolder;
+    font-size: 80px;
+    font-family: 'Squada One', sans-serif;
+}
+
+.middlepicturebutton p {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 40px;
+    width: 275px;
+    background-color: #0A3641;
+    border-radius: 5px;
+    font-family: 'Squada One', sans-serif;
+}
+
+.middlepicturebutton p:hover {
+    background-image: url(/pictures/buttontexture.png);
+    background-size: cover;
+    background-position: center bottom;
+    font-size: 25px;
+}
+
+.bottomproducts {
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 96%;
+    margin-bottom: 120px;
+}
+
+.bottomproducts h2 {
+    color: #0A3641;
+    font-size: 35px;
+    font-family: 'Squada One', sans-serif;
+}
+
+.bottomproducts-inline {
+    display: inline-flex;
+    justify-content:flex-start;
+    gap: 40px;
+}
+
+.home-bestsellers{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 450px;
+    width: 350px;
+    position: relative;
+
+    .home-bestsellercard a img{
+        height: 450px;
+        width: 350px;
+        object-fit: contain;
+        transition: 0.5s;
+
+        &:hover {
+            object-fit: cover;
+        }
+    }
+    
+    .home-bestsellercard {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        transition: 0.3s;
+        background: white;
+        border: 5px solid #3D626B;
+
+        &:hover {
+            transform: scale(1.07);
+            border: 5px solid #0A3641;
+        }
+    }
+}
+
+
+
+
+
+
+.allproductstoppicturetext {
+    position: relative;
+    display: inline-block;
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.allproductstoppicturetext img {
+    display: block;
+    width: 93%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.allproductstoppicturelefttext {
+    position: absolute;
+    top: 50%; 
+    left: 19%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-align: center;
+    line-height: 0px;
+}
+
+.allproductstoppicturelefttext p{
+    font-size: 50px;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.allproductstoppicturelefttext span {
+    font-size: 52px;
+    font-weight: 900;
+    font-family: 'Squada One', sans-serif;
+}
+
+.allproductstoppicturerighttext {
+    position: absolute;
+    top: 50%; 
+    left: 75%;
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-align: center;
+    line-height: 0px;
+    width: 100%;
+}
+
+.allproductstoppicturerighttext p {
+    font-size: 50px;   
+    font-family: 'Squada One', sans-serif;
+}
+
+.allproductstoppicturerighttext a {
+    color: white;
+    text-decoration: none;
+}
+
+.allproductstoppicturerighttext span {
+    font-size: 110px;
+    font-weight: 900;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.allproducts-productcards-top {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.allproducts-productcards-top h1 {
+    float: left;
+    margin-left: 60px;
+    font-size: 50px;
+    color: #0A3641;
+}
+
+.allproducts-productcards-top .filterbutton {
+    float: right;
+    height: 40px;
+    width: 75px;
+    margin-top: 50px;
+    margin-right: 60px;
+    background-color: #0A3641;
+    box-shadow: none;
+    color: white;
+    border-radius: 5px;
+    border:solid 1px #0A3641;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: white;
+        color: #0A3641;
+        border:solid 1px white;
+    }
+}
+
+.allproducts-productcards {
+    margin-bottom: 150px;
+}
+
+.productHolder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9vw;
+    margin-top: 25px;
+    margin-left: 60px;
+    margin-right: 60px;
+
+    .card a img{
+        height: 320px;
+        width: 275px;
+        object-fit: contain;
+
+        &:hover {
+            object-fit: cover;
+        }
+    }
+    
+    .card {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        width: 285px;
+        text-align: center;
+        height: 500px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        transition: 0.3s;
+        background: white;
+        border: 5px solid #3D626B;
+    
+        &:hover {
+            transform: scale(1.07);
+            border: 5px solid #0A3641;
+        }
+
+        .card a {
+            text-decoration: none;
+        }
+    
+        .cardText {
+            color: #0A3641;
+            text-decoration: none;
+            border-top: 5px solid #0A3641;
+        }
+    
+        .categoryText{
+            font-weight: 400px;
+            opacity: 0.7;
+        }
+    
+        .priceText{
+            font-size: large;
+        }
+    
+        .offerText{
+            font-size:small;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #0A3641;
+    width: 100%;
+    height: 100%;
+    display: block;
+    bottom: 0;
+    left: 0px;
+}
+
+.footertext {
+    padding-top: 50px;
+}
+
+.newsletter {
+    color: white;
+    margin-left: 220px;
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin-bottom: 0px;
+}
+
+.newsletter p {
+    font-size: 22px;
+    width: 450px;
+}
+
+.newsletteremail {
+    display: inline-flex;
+    align-items: center;
+}
+
+.newsletteremail p {
+    padding: 5px;
+    margin-left: 10px;
+    width: 100%;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    color: #424D50;
+}
+
+.newsletteremail span {
+    background-color: #E0E6E7;
+    color: #707373;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletteremail {
+    background-color: #859BA0;
+    height: 50px;
+    width: 450px;
+}
+
+.cs-au {
+    display: inline-flex;
+    gap: 150px;
+    float: right;
+    margin-bottom: 25px;
+}
+
+.au {
+    margin-right: 220px;
+}
+
+.au a {
+    color: white;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: none;
+}
+
+.cs a {
+    color: white;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: none;
+}
+
+.cs h4, .au h4 {
+    opacity: 75%;
+}
+
+footer .footerlogo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+footer .footerlogo img {
+    height: 160px;
+    width: auto;
+    opacity: 75%;
+}
+
+.termsofuse {
+    display: inline-flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.termsofuse p {
+    font-size: 15px;
+    opacity: 75%;
+}
+
+footer input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    opacity: 50%;
+}
+
+footer input[type="checkbox"]:hover {
+    opacity: 100%;
+}
+
+footer input[type="checkbox"]:checked {
+    opacity: 100%;
+}
+
+footer input[type="checkbox"]:checked~.termsofuse p {
+    opacity: 100%;
+}

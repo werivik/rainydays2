@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Rainy Days Homepage</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Weronika Vik">
+        <meta name="description" content="Rainy Days Homepage">
+      
+       <link rel="stylesheet" type="text/css" href="CSS\style.css">
+       <script src="js/allproducts.js" type="module"></script>
+       <script src="js/productdetail.js" type="module"></script>  
+      
+    </head>
+
+<body>
+    
+    <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous">
+    </script>
+
+    <main> 
+
+     <header>
+        <div class="logo">
+            <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
+        </div>
+    
+        <nav>
+           <ul>
+            <li class="activehover">
+                <a href="index.html">Homepage</a>
+            </li>
+            <li>
+                <a href="allproducts.html">All Jakcets</a>
+           </li>
+            <li class="shortlink">
+                <a href="">News</a>
+            </li>
+            <li class="shortlink">
+             <a href="">Tips</a>
+            </li>
+            </ul>
+            <div class="container-searchbar">
+                <input id="searchbar"
+                       onkeyup="search_jackets()"
+                       type="text" name="search"
+                       placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
+         
+            </div>
+            <ul>
+                <li class="headright">
+                    <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                    <i class="fa-regular fa-circle-user"></i>
+                </li>
+            </ul>
+        </nav>
+     </header>
+
+     <div class="colorline">
+        <p>Free shipping for orders over 850kr</p>
+     </div>
+
+     <section class="sectioncolor">
+        <div class="toppicturetext">
+            <div class="toppicture">
+                <div class="toppicturelrtext">
+                    <div class="toppicturelefttext">
+                        <p>Pushing the</p>
+                        <p><span>COMFORT ZONE</span></p>
+                    </div>
+                    <div class="toppicturerighttext">
+                        <a href=""><p><span>20%</span></p></a>
+                        <p>off all jackets</p>
+                    </div>
+                </div>
+                <img src="/pictures/hiking2edit.jpeg" alt="">
+            </div>
+        </div>
+
+        <section class="ourproductsec">
+            <div class="ourproductsinline" id="productparent">
+                <div class="ourproductsec1">
+                    <a href="" class="ourproductssec1link">
+                        <div class="ourproduct1sec" id="productchild">
+                            <img src="/pictures/RainyDays_Jacket1.jpg" alt="">
+                            <div class="ourproductname">
+                              All Jackets
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ourproductsec1">
+                    <a href="" class="ourproductssec1link">
+                        <div class="ourproduct2sec">
+                            <img src="/pictures/RainyDays_Jacket2.jpg" alt="">
+                            <div class="ourproductname">
+                              Bestsellers
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ourproductsec1">
+                    <a href="" class="ourproductssec1link">
+                        <div class="ourproduct3sec">
+                            <img src="/pictures/hikingtrail.jpg" alt="">
+                            <div class="ourproductname">
+                              News
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ourproductsec1">
+                    <a href="" class="ourproductssec1link">
+                        <div class="ourproduct4sec">
+                            <img src="/pictures/canoeing2.jpg" alt="">
+                            <div class="ourproductname">
+                              Tips
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="middlepicturesec">
+            <div class="middlepicture">
+                <img src="pictures/backpackingsnow.jpg" alt="">
+                <div class="middlepicturetext">
+                    <div class="middlepicturetextlogo">
+                        <img src="pictures/RainyDays_Logowhitemountain.png" alt="">
+                    </div>
+                    <p>our tips for</p>
+                    <p><span>ANY TRIP</span></p>
+                    <div class="middlepicturebutton">
+                        <p>check out here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottomproducts">
+            <h2>Our New Products</h2>
+
+            <div class="bottomproducts-inline">
+
+                <div class="home-bestsellers">
+                    <div class="home-bestsellercard">
+                        <a href="jackets-details.html">
+                            <img src="/pictures/RainyDays_Jacket5.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="home-bestsellers">
+                    <div class="home-bestsellercard">
+                        <a href="jackets-details.html">
+                            <img src="/pictures/RainyDays_Jacket6.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="home-bestsellers">
+                    <div class="home-bestsellercard">
+                        <a href="jackets-details.html">
+                            <img src="/pictures/RainyDays_Jacket7.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="home-bestsellers">
+                    <div class="home-bestsellercard">
+                        <a href="jackets-details.html">
+                            <img src="/pictures/RainyDays_Jacket4.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    
+
+    <footer>
+        <div class="footertext">
+            <div class="newsletter">
+                <p>Sign up to our newsletter and get access to exclusive offers and hiking tips below,</p>
+                <div class="newsletteremail">
+                    <p>e-mail</p><p><span>Submit</span></p>
+                </div>
+                <div class="termsofuse">
+                    <label class="checkboxcontainer">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>I agree to receive newsletters that may have varying content, arrive at varying times, sacrifice my first born in the name of Rainy Days and sell my soul to make hiking my entire personality.</p>
+                </div>
+            </div>
+                <div class="cs-au">
+                    <div class="cs">
+                        <a href=""><h2>Customer Service</h2></a>
+                        <a href=""><h4>Help & FAQ</h4></a>
+                        <a href=""><h4>Contact us</h4></a>
+                        <a href=""><h4>Return Policy</h4></a>
+                        <a href=""><h4>Feedback</h4></a>
+                        <a href=""><h4>Subscription</h4></a>
+                    </div>
+                    <div class="au">
+                        <a href=""><h2>About Us</h2></a>
+                        <a href=""><h4>Our History</h4></a>
+                        <a href=""><h4>Our Team</h4></a>
+                        <a href=""><h4>Privacy Policy</h4></a>
+                    </div>
+                </div>
+        </div>
+        <div class="footerlogo">
+            <img src="/pictures/RainyDays_Logowhite.png" alt="">
+        </div>
+    </footer>
+
+    </main>
+</body>
+
+<script>
+</script>
+
+</html> 
