@@ -55,14 +55,16 @@ let id = params.get("id");
 
 async function getCard() {
     try {
+        let params = new URL(document.location).searchParams;
+        let id = params.get("id");
         const api = `https://v2.api.noroff.dev/rainy-days/${id}`;
         const response = await fetch(api);
         const data = await response.json();
 
-        listFullCard (data.item, outElement);
+        listFullCard(data.item, outElement);
     }
     catch(error) {
-        outElement.innerHTML = `I dont want to fetch data...`;
+        outElement.innerHTML = `I don't want to fetch data...`;
     }
 }
 
@@ -80,7 +82,7 @@ function listFullCard(item, out){
         </div>
     </div>
   `;
-  out.innerHTML = newDiv
+  out.innerHTML = code;
 }
 
 function getId(id) {
