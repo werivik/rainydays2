@@ -56,7 +56,6 @@ let id = params.get("id");
 async function getCard() {
     try {
         const api = `https://v2.api.noroff.dev/rainy-days/${id}`;
-        //console.log(api); IT WORKED YIPPIE
         const response = await fetch(api);
         const data = await response.json();
 
