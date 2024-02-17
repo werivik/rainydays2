@@ -53,22 +53,41 @@ const outElement = document.getElementById("containerdetail");
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
 
+if (id) {
+    getCard();
+} else {
+    outElement.innerHTML = "Product ID not provided.";
+}
+
 async function getCard() {
     try {
         let params = new URL(document.location).searchParams;
         let id = params.get("id");
+        console.log('Product ID:', id); 
+
         const api = `https://v2.api.noroff.dev/rainy-days/${id}`;
+        
         const response = await fetch(api);
+        console.log('API Response:', response);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch product data');
+        }
+
         const data = await response.json();
 
+        console.log('Data:', data);
+
+        if (!data || !data.item) {
+            throw new Error('Product data is undefined');
+        }
+
         listFullCard(data.item, outElement);
-    }
-    catch(error) {
-        outElement.innerHTML = `I don't want to fetch data...`;
+    } catch (error) {
+        console.error(error);
+        outElement.innerHTML = 'Failed to fetch data';
     }
 }
-
-getCard();
 
 function listFullCard(item, out){
     console.log(item)
@@ -88,7 +107,7 @@ function listFullCard(item, out){
 function getId(id) {
     let div = "<div>";
     for (const location in id) {
-        div += `<a href="jackets-details.html?id=${item.id}">`
+        div += `<a href="jackets-details.html?id=${id}">`
     }
     div += "</div>";
     return div;

@@ -37,45 +37,53 @@
 
 
 
-const products = document.querySelector(".productHolder");
-const URL = "https://v2.api.noroff.dev/rainy-days/";
+document.addEventListener("DOMContentLoaded", function() {
+    const products = document.querySelector(".productHolder");
 
-        function createCard(item){
-            console.log(item)
+    if (products) {
+        const URL = "https://v2.api.noroff.dev/rainy-days/";
+
+        function createCard(item) {
+            console.log(item);
             let code = ` 
-            <div class="card">
-              <a href="jackets-details.html?id=${item.id}">
-                <img src="${item.image.url}" alt="${item.description}">
-                <div class="cardText">
-                    <p class="categoryText">${item.gender}</p>
-                    <h2 class="brandText">${item.title}</h2>
-                    <p class="priceText">${item.price}</p>
+                <div class="card">
+                    <a href="jackets-details.html?id=${item.id}">
+                        <img src="${item.image.url}" alt="${item.description}">
+                        <div class="cardText">
+                            <p class="categoryText">${item.gender}</p>
+                            <h2 class="brandText">${item.title}</h2>
+                            <p class="priceText">${item.price}</p>
+                        </div>
+                    </a>
                 </div>
-               </a>
-            </div>
-          `;
-         products.innerHTML += code;
-         return code
+            `;
+            products.innerHTML += code;
+            return code;
         }
 
         const getAllProducts = async (URL) => {
-            const response = await fetch(URL);
-            const data = await response.json();
-           // console.log(data.data);
-
-            listJackets (data.data);
+            try {
+                const response = await fetch(URL);
+                const data = await response.json();
+                listJackets(data.data);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
         }
 
-        function listJackets (list) {
+        function listJackets(list) {
             let output = "";
-            for (const jacket of list){
-                //console.log(jacket);
-                output += createCard (jacket);
+            for (const jacket of list) {
+                output += createCard(jacket);
             }
             products.innerHTML = output;
         }
 
-        getAllProducts (URL);
+        getAllProducts(URL);
+    } else {
+        console.error("Element with class 'productHolder' not found.");
+    }
+});
 
 
 
