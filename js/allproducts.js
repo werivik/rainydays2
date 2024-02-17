@@ -34,6 +34,9 @@
 //     listData(filtered, outElement);
 // }
 
+
+
+
 const products = document.querySelector(".productHolder");
 const URL = "https://v2.api.noroff.dev/rainy-days/";
 
@@ -73,7 +76,12 @@ const URL = "https://v2.api.noroff.dev/rainy-days/";
         }
 
         getAllProducts (URL);
-        
+
+
+
+
+
+
 // const URL = "https://v2.api.noroff.dev/rainy-days/";
 
 
