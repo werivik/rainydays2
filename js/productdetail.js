@@ -1,74 +1,20 @@
-// const params = new URLSearchParams(document.location.search);
-// const id = params.get("id");
-// console.log(id);
+document.addEventListener("DOMContentLoaded", function() {
+    const outElement = document.getElementById("containerdetail");
+    const params = new URL(document.location).searchParams;
+    const id = params.get("id");
 
-// const status = document.querySelector(".productHolder");
-// const out = document.querySelector(".productHolderDetails");
+    if (id) {
+        getCard(id, outElement);
+    } else {
+        outElement.innerHTML = "Product ID not provided. Please never try again.";
+    }
+});
 
-// const url = `https://v2.api.noroff.dev/rainy-days/${id}`;
-// console.log(url);
-
-// fetch(url)
-//   .then(response => {
-//     if (!response.ok) {
-//       throw new Error('Network response was not ok');
-//     }
-//     return response.json();
-//   })
-//   .then(data => {
-//     console.log(data);
-//     listData(data); // Call listData after fetching the data
-//   })
-//   .catch(error => {
-//     console.error('There was a problem with the fetch operation:', error);
-//     status.innerHTML = "Failed to fetch product details";
-//   });
-
-// function listData(item) {
-//     console.log(item);
-//     document.title = item.title;
-
-//     let imageUrl = item.image ? item.image.url : '';
-//     let description = item.description ? item.description : '';
-//     let gender = item.gender ? item.gender : '';
-//     let title = item.title ? item.title : '';
-//     let price = item.price ? item.price : '';
-
-//     let newDiv = ` 
-//         <div class="carddetail">
-//             <img src="${imageUrl}" alt="${description}">
-//             <div class="cardTextdetail">
-//                 <p class="categoryTextdetail">${gender}</p>
-//                 <h2 class="brandTextdetail">${title}</h2>
-//                 <p class="priceTextdetail">${price}</p>
-//             </div>
-//         </div>
-//     `;
-//     out.innerHTML = newDiv;
-//     status.innerHTML = "";
-// }
-
-const outElement = document.getElementById("containerdetail");
-
-let params = new URL(document.location).searchParams;
-let id = params.get("id");
-
-if (id) {
-    getCard();
-} else {
-    outElement.innerHTML = "Product ID not provided.";
-}
-
-async function getCard() {
+async function getCard(id, outElement) { 
     try {
-        let params = new URL(document.location).searchParams;
-        let id = params.get("id");
-        console.log('Product ID:', id); 
-
+        console.log('Fetching product with ID:', id); 
         const api = `https://v2.api.noroff.dev/rainy-days/${id}`;
-        
         const response = await fetch(api);
-        console.log('API Response:', response);
 
         if (!response.ok) {
             throw new Error('Failed to fetch product data');
@@ -76,39 +22,32 @@ async function getCard() {
 
         const data = await response.json();
 
-        console.log('Data:', data);
+        console.log("data"+data);
+        console.log("data.item"+data.item);
+        console.log("data.item"+data.data);
 
-        if (!data || !data.item) {
-            throw new Error('Product data is undefined');
-        }
+        // if (!data || !data.item) {
+        //     throw new Error('Product not found or is misbehaving');
+        // }
 
-        listFullCard(data.item, outElement);
+        // listFullCard(data.item, outElement); 
     } catch (error) {
         console.error(error);
-        outElement.innerHTML = 'Failed to fetch data';
+        outElement.innerHTML = 'Failed to fetch product data. Please try again later.';
     }
 }
 
-function listFullCard(item, out){
-    console.log(item)
-    let code = ` 
-    <div id="${item.id}">
-        <img src="${item.image.url}" alt="${item.description}">
-        <div class="cardText">
-            <p class="categoryText">${item.gender}</p>
-            <h2 class="brandText">${item.title}</h2>
-            <p class="priceText">${item.price}</p>
+function listFullCard(item, outElement) {
+    console.log('Product details:', item);
+    const code = `
+        <div id="${item.id}">
+            <img src="${item.image.url}" alt="${item.description}">
+            <div class="cardText">
+                <p class="categoryText">${item.gender}</p>
+                <h2 class="brandText">${item.title}</h2>
+                <p class="priceText">${item.price}</p>
+            </div>
         </div>
-    </div>
-  `;
-  out.innerHTML = code;
-}
-
-function getId(id) {
-    let div = "<div>";
-    for (const location in id) {
-        div += `<a href="jackets-details.html?id=${id}">`
-    }
-    div += "</div>";
-    return div;
+    `;
+    outElement.innerHTML = code;
 }

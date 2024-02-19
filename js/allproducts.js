@@ -1,42 +1,3 @@
-// import { createCard } from "./utils";
-
-// let collection = [];
-// const outElement = document.getElementById("container");
-
-// async function collectJackets() {
-//     try {
-//         const api = `https://v2.api.noroff.dev/rainy-days/`;
-//         const response = await fetch(api);
-//         const data = await response.json();
-//         collection = data.item;
-//         console.log(collection); // Log the collection array
-//         listData(collection, outElement);
-//     }
-//     catch(error) {
-//         outElement.innerHTML = `Nope...`;
-//     }
-// }
-
-// collectJackets();
-
-// const inputField = document.getElementById("queryString");
-// inputField.addEventListener("keyup", filterCards);
-
-// function filterCards() {
-//     const filterQuery = inputField.value;
-
-//     const filtered = collection.filter((card)=>{
-//         return card.name.toUpperCase().indexOf(filterQuery.toUpperCase()) > -1;
-//     });
-
-//     console.log(collection.length, filtered.length);
-
-//     listData(filtered, outElement);
-// }
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const products = document.querySelector(".productHolder");
 
@@ -84,11 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Element with class 'productHolder' not found.");
     }
 });
-
-
-
-
-
 
 // const URL = "https://v2.api.noroff.dev/rainy-days/";
 
