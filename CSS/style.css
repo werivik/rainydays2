@@ -597,6 +597,9 @@ header input[type=text] {
             font-size: 22px;
             font-weight: bold;
         }
+        .product-invisible-filter {
+            opacity: 0;
+        }
     }
 
     .product-price-shopping {
