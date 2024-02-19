@@ -22,25 +22,25 @@ async function getCard(id, outElement) {
 
         const data = await response.json();
 
-        console.log("data"+data);
-        console.log("data.item"+data.item);
-        console.log("data.item"+data.data);
+        console.log(data);
+        console.log(data.data);
 
-        // if (!data || !data.item) {
-        //     throw new Error('Product not found or is misbehaving');
-        // }
+        if (!data || !data.item) {
+            throw new Error('Product not found or is misbehaving');
+        }
 
-        // listFullCard(data.item, outElement); 
+        listFullCard(id, data.item, outElement); 
+
     } catch (error) {
         console.error(error);
         outElement.innerHTML = 'Failed to fetch product data. Please try again later.';
     }
 }
 
-function listFullCard(item, outElement) {
-    console.log('Product details:', item);
+function listFullCard(id, item, outElement) {
+    console.log('Product details:', id, item);
     const code = `
-        <div id="${item.id}">
+        <div id="${id}">
             <img src="${item.image.url}" alt="${item.description}">
             <div class="cardText">
                 <p class="categoryText">${item.gender}</p>
