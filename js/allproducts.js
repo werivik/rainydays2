@@ -6,16 +6,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function createCard(item) {
             console.log(item);
+
+            let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
+
             let code = ` 
                 <div class="card">
                     <a href="jackets-details.html?id=${item.id}">
                         <img src="${item.image.url}" alt="${item.description}">
                         <div class="cardText">
                             <p class="categoryText">${item.gender}</p>
-                            <h2 class="brandText">${item.title}</h2>
-                            <p class="priceText">${item.price}</p>
+                             <h2 class="productTitle">${titleWithoutRepetition}</h2>
                         </div>
                     </a>
+                    <div class="product-price-shopping">
+                        <p class="priceText">${item.price}</p>
+                        <p class="priceText"><i class="fa-solid fa-cart-shopping"></i></p>
+                    </div>
                 </div>
             `;
             products.innerHTML += code;

@@ -541,7 +541,7 @@ header input[type=text] {
 }
 
 .productHolder{
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
@@ -566,9 +566,9 @@ header input[type=text] {
         flex-direction: column;
         width: 285px;
         text-align: center;
-        height: 500px;
+        height: 475px;
         border-radius: 5px;
-        margin-bottom: 25px;
+        gap: 0.9vw;
         transition: 0.3s;
         background: white;
         border: 5px solid #3D626B;
@@ -591,15 +591,24 @@ header input[type=text] {
         .categoryText{
             font-weight: 400px;
             opacity: 0.7;
+            line-height: 0px;
         }
-    
-        .priceText{
-            font-size: large;
+        .productTitle {
+            font-size: 22px;
+            font-weight: bold;
         }
-    
-        .offerText{
-            font-size:small;
-        }
+    }
+
+    .product-price-shopping {
+        display: flex;
+        align-items: flex-end;
+        font-size: large;
+        justify-content: center;
+        gap: 15px;
+        line-height: 0px;
+    }
+    .product-price-shopping i {
+        line-height: 0px;
     }
 }
 
