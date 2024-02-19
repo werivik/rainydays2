@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let allProducts = [];
 
         function createCard(item) {
+            console.log(item.baseColor);
             let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
             console.log(item)
 
@@ -147,6 +148,34 @@ document.addEventListener("DOMContentLoaded", function() {
             listJackets(filteredProducts);
         }
 
+        function filterByColor(color) {
+            const filteredProducts = allProducts.filter(product => {
+                if (color === 'all') {
+                    return true;
+                } else if (color === 'red') {
+                    return product.baseColor.toLowerCase() === 'red';
+                } else if (color === 'black') {
+                    return product.baseColor.toLowerCase() === 'black';
+                } else if (color === 'yellow') {
+                    return product.baseColor.toLowerCase() === 'yellow';
+                } else if (color === 'green') {
+                    return product.baseColor.toLowerCase() === 'green';
+                } else if (color === 'gray') {
+                    return product.baseColor.toLowerCase() === 'gray';
+                } else if (color === 'blue') {
+                    return product.baseColor.toLowerCase() === 'blue';
+                } else if (color === 'purple') {
+                    return product.baseColor.toLowerCase() === 'purple';
+                }
+                
+                else {
+                    return product.baseColor.toLowerCase() === color.toLowerCase();
+                }
+            });
+            
+            listJackets(filteredProducts);
+        }
+
         getAllProducts(URL);
 
         const genderFilterSelect = document.getElementById('genderFilter');
@@ -155,6 +184,14 @@ document.addEventListener("DOMContentLoaded", function() {
             filterByGender(selectedGender);
             console.log(selectedGender)
         });
+
+        const colorFilterSelect = document.getElementById('colorFilter');
+        colorFilterSelect.addEventListener('change', function() {
+            const selectedColor = colorFilterSelect.value;
+            filterByColor(selectedColor);
+            console.log(selectedColor)
+        });
+        
 
     } else {
         console.error("Element with class 'productHolder' not found.");
