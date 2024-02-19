@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (products) {
         const URL = "https://v2.api.noroff.dev/rainy-days/";
+        let allProducts = [];
 
         function createCard(item) {
             console.log(item);
@@ -22,9 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         <p class="priceText">${item.price}</p>
                         <p class="priceText"><i class="fa-solid fa-cart-shopping"></i></p>
                     </div>
+                    <div class="product-invisible-filter">
+                    <p class="priceText">${item.baseColor}</p>
+                </div>
                 </div>
             `;
-            products.innerHTML += code;
             return code;
         }
 
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             try {
                 const response = await fetch(URL);
                 const data = await response.json();
+                allProducts = data.data;
                 listJackets(data.data);
             } catch (error) {
                 console.error("Error fetching products:", error);
@@ -45,6 +49,28 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             products.innerHTML = output;
         }
+
+        function applyFilters() {
+            const genderFilter = document.getElementById('genderFilter').value.toLowerCase();
+            const colorFilter = document.getElementById('colorFilter').value.toLowerCase();
+            const priceFilter = parseFloat(document.getElementById('priceFilter').value);
+        
+            let filteredProducts = allProducts.filter(product => {
+                const productGender = product.gender.toLowerCase();
+                const productColor = product.baseColor.toLowerCase();
+                const productPrice = parseFloat(product.price);
+        
+                const passGender = genderFilter === '' || productGender === genderFilter;
+                const passColor = colorFilter === '' || productColor === colorFilter;
+                const passPrice = isNaN(priceFilter) || productPrice <= priceFilter;
+        
+                return passGender && passColor && passPrice;
+            });
+        
+            listJackets(filteredProducts);
+        }
+
+        document.getElementById('applyFilters').addEventListener('click', applyFilters);
 
         getAllProducts(URL);
     } else {

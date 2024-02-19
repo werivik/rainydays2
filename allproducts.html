@@ -85,7 +85,23 @@
 
             <div class="allproducts-productcards-top">
                 <h1>All Jackets</h1>
-                <button class="filterbutton">FILTER</button>
+                <select id="genderFilter">
+                    <option value="">All Genders</option>                    <option value="">All Genders</option>
+                    <option value="">Women</option>
+                    <option value="">Men</option>
+                </select>
+                <select id="colorFilter">
+                    <option value="">All colors</option>                    <option value="">All Genders</option>
+                    <option value="">Red</option>
+                    <option value="">Blue</option>
+                    <option value="">Black</option>
+                    <option value="">Green</option>
+                    <option value="">Brown</option>
+                    <option value="">White</option>
+                    <option value="">Orange</option>
+                </select>
+                <input type="number" id="priceFilter" placeholder="Max Price">
+                <button id="applyFilters">Apply Filters</button>
             </div>
 
             <div class="productHolder">
