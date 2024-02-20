@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Rainy Days Checkout</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Weronika Vik">
+        <meta name="description" content="Rainy Days Homepage">
+      
+        <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet" type="text/css" href="CSS\style.css">
+        <script type="module" src="js/productdetail.js"></script> 
+        <script type="module" src="js/allproducts.js"></script> 
+        <script type="module" src="js/utils.js"></script> 
+        <script type="module" src="js/checkout.js" defer></script>
+      
+    </head>
+
+<body>
+
+    <main> 
+
+     <header>
+        <div class="logo">
+            <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
+        </div>
+    
+        <nav class="menu">
+           <ul>
+            <li>
+                <a href="index.html">Homepage</a>
+            </li>
+            <li>
+                <a href="allproducts.html">All Jakcets</a>
+           </li>
+            <li class="shortlink">
+                <a href="">News</a>
+            </li>
+            <li class="shortlink">
+             <a href="">Tips</a>
+            </li>
+            </ul>
+            <div class="container-searchbar">
+                <input id="searchbar"
+                       onkeyup="search_jackets()"
+                       type="text" name="search"
+                       placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
+         
+            </div>
+            <ul>
+                <li class="headright">
+                    <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <i class="fa-regular fa-circle-user"></i>
+                </li>
+            </ul>
+        </nav>
+     </header>
+
+     <div class="colorline">
+        <p>Free shipping for orders over 850kr</p>
+     </div>
+
+     <section class="sectioncolor">
+
+        <div class="allproductstoppicturetext">
+        </div>
+
+        <h1>Checkout</h1>
+
+        <div id="checkoutItems">
+        </div>
+
+        <p>
+            Total sum: <span id="totalPrice"></span>
+        </p>
+
+     </section>
+
+    <footer>
+        <div class="footertext">
+            <div class="newsletter">
+                <p>Sign up to our newsletter and get access to exclusive offers and hiking tips below,</p>
+                <div class="newsletteremail">
+                    <p>e-mail</p><p><span>Submit</span></p>
+                </div>
+                <div class="termsofuse">
+                    <label class="checkboxcontainer">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>I agree to receive newsletters that may have varying content, arrive at varying times, sacrifice my first born in the name of Rainy Days and sell my soul to make hiking my entire personality.</p>
+                </div>
+            </div>
+                <div class="cs-au">
+                    <div class="cs">
+                        <a href=""><h2>Customer Service</h2></a>
+                        <a href=""><h4>Help & FAQ</h4></a>
+                        <a href=""><h4>Contact us</h4></a>
+                        <a href=""><h4>Return Policy</h4></a>
+                        <a href=""><h4>Feedback</h4></a>
+                        <a href=""><h4>Subscription</h4></a>
+                    </div>
+                    <div class="au">
+                        <a href=""><h2>About Us</h2></a>
+                        <a href=""><h4>Our History</h4></a>
+                        <a href=""><h4>Our Team</h4></a>
+                        <a href=""><h4>Privacy Policy</h4></a>
+                    </div>
+                </div>
+        </div>
+        <div class="footerlogo">
+            <img src="/pictures/RainyDays_Logowhite.png" alt="">
+        </div>
+    </footer>
+
+    </main>
+</body>
+
+</html> 

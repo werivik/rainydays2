@@ -58,7 +58,12 @@ function listFullCard(id, item, outElement) {
             <p class="priceText">${item.price}</p>
             <div class="bottom-buttons">
                 <p class="colorText">${item.baseColor}</p>
-                <p class="sizeText">${item.sizes}</p>
+                <select id="sizeSelect">
+                    <option value="" disabled selected>Size</option>
+                    ${item.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                </select>
+                <input type="number" id="quantityInput" value="0" min="0">
+                <button id="addToBasketBtn">Add to Basket</button>
             </div>
         </div>
 
@@ -71,5 +76,28 @@ function listFullCard(id, item, outElement) {
 </div>
     `;
     outElement.innerHTML = code;
+
+    const sizeSelect = document.getElementById('sizeSelect');
+    sizeSelect.addEventListener('change', (event) => {
+        const selectedSize = event.target.value;
+        updateShoppingBasket(id, item, selectedSize);
+    });
+
+    const addToBasketBtn = document.getElementById('addToBasketBtn');
+    addToBasketBtn.addEventListener('click', () => {
+        const selectedSize = sizeSelect.value;
+        const quantity = document.getElementById('quantityInput').value;
+        if (selectedSize === '' || quantity === '0') {
+            alert('Please select size and quantity before progressing...');
+            return;
+        }
+        updateShoppingBasket(id, item, selectedSize, quantity);
+    });
+}
+
+
+function updateShoppingBasket(id, item, selectedSize, quantity) {
+    console.log('Selected size:', selectedSize);
+    console.log('Quantity:', quantity);
 }
 
