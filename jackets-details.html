@@ -81,6 +81,34 @@
 
         <div class="productdetailcontainer">
             <div id="containerdetail" class="productHolderDetail">
+                <div id="${id}" class="detail-div">
+                    <div class="top-bottom-parts">
+                        <div class="top-part">
+                            <div class="detail-all-photos">
+                                <div class="mini-pictures">
+                                    <img src="${item.image.url}" alt="${item.description}">
+                                    <img src="${item.image.url}" alt="${item.description}">
+                                    <img src="${item.image.url}" alt="${item.description}">
+                                </div>
+                                <img src="${item.image.url}" alt="${item.description}">
+                            </div>
+                        <div class="cardText">
+                            <h2 class="productTitle">${titleWithoutRepetition}</h2>
+                            <p class="categoryText">${item.gender}</p>
+                            <p class="priceText">${item.price}</p>
+                            <div class="bottom-buttons">
+                                <p class="colorText">${item.baseColor}</p>
+                                <p class="sizeText">${item.size}</p>
+                            </div>
+                        </div>
+    
+                        </div>
+                    <div class="productinfo">
+                        <h3>Product Information</h3>
+                        <p class="descText">${item.description}</p>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
 
