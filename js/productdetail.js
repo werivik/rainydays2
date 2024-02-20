@@ -25,11 +25,11 @@ async function getCard(id, outElement) {
         console.log(data);
         console.log(data.data);
 
-        if (!data || !data.item) {
+        if (!data || !data.data) {
             throw new Error('Product not found or is misbehaving');
         }
 
-        listFullCard(id, data.item, outElement); 
+        listFullCard(id, data.data, outElement); 
 
     } catch (error) {
         console.error(error);
@@ -39,15 +39,28 @@ async function getCard(id, outElement) {
 
 function listFullCard(id, item, outElement) {
     console.log('Product details:', id, item);
+    let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
     const code = `
-        <div id="${id}">
-            <img src="${item.image.url}" alt="${item.description}">
-            <div class="cardText">
-                <p class="categoryText">${item.gender}</p>
-                <h2 class="brandText">${item.title}</h2>
-                <p class="priceText">${item.price}</p>
-            </div>
-        </div>
+    <div id="containerdetail" class="productHolderDetail">
+    <div id="${id}" class="detail-div">
+    <div class="detail-all-photos">
+    <div class="mini-pictures">
+    <img src="${item.image.url}" alt="${item.description}">
+    <img src="${item.image.url}" alt="${item.description}">
+    <img src="${item.image.url}" alt="${item.description}">
+    </div>
+        <img src="${item.image.url}" alt="${item.description}">
+    </div>
+    <div class="cardText">
+        <h2 class="productTitle">${titleWithoutRepetition}</h2>
+        <p class="categoryText">${item.gender}</p>
+        <p class="priceText">${item.price}</p>
+        <p class="priceText">${item.baseColor}</p>
+        <p class="priceText">${item.description}</p>
+    </div>
+</div>
+</div>
     `;
     outElement.innerHTML = code;
 }
+

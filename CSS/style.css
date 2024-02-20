@@ -615,6 +615,55 @@ header input[type=text] {
     }
 }
 
+.productdetailcontainer {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 60px;
+}
+
+#containerdetail{
+    margin-top: 0px;
+
+    .productTitle {
+        font-size: 60px;
+        line-height: 0px;
+    }
+
+    .detail-div {
+        display: inline-flex;
+        gap: 60px;
+    }
+
+    .detail-all-photos {
+        display: inline-flex;
+        justify-content: center;
+        background-image: url(/pictures/buttontexture.png);
+        border-radius: 5px;
+        max-height: 605px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .detail-all-photos img {
+        width: 450px;
+        height: 600px;
+        object-fit:contain;
+    }
+
+    .mini-pictures {
+        display: flex;
+        flex-direction: column;
+        margin-right: 15px;
+        align-items: flex-start;
+    }
+
+    .mini-pictures img {
+        height: 200px;
+        object-fit: contain;
+        width: 100px;
+    }
+}
+
 
 
 
