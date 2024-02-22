@@ -74,11 +74,6 @@
 
 // });
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const products = document.querySelector(".productHolder");
 

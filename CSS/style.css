@@ -614,6 +614,10 @@ header input[type=text] {
     }
 }
 
+#confirmationMessage {
+    font-size: 50px;
+}
+
 .productdetailcontainer {
     margin-left: 60px;
     margin-right: 60px;
@@ -683,7 +687,19 @@ header input[type=text] {
     }
 }
 
+.recommendedProductsCard {
 
+}
+
+.recommendedProductsCard img {
+    height: 300px;
+    width: 250px;
+    object-fit: contain;
+}
+
+.checkoutcontainer {
+    min-height: 800px;
+}
 
 
 
