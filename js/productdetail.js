@@ -312,7 +312,10 @@ async function listFullCard(id, item, outElement) {
             <p class="categoryText">${item.gender}</p>
             <p class="priceText">${item.price} kr</p>
             <div class="bottom-buttons">
-                <p class="colorText">${item.baseColor}</p>
+                <div class="choose-color">
+                    <span class="colorCircle" style="background-color: ${item.baseColor};"></span>
+                    <p class="colorText">${item.baseColor}</p>
+                </div>
                 <select id="sizeSelect">
                     <option value="" disabled selected>Size</option>
                     ${item.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}

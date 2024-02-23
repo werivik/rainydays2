@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function displayConfirmedItems() {
     const confirmedItems = JSON.parse(localStorage.getItem('confirmedItems')) || [];
-    const confirmationContainer = document.getElementById('confirmationContainer');
+    const confirmationContainer = document.getElementById('confirmationContainer-confirmation');
 
     if (confirmedItems.length === 0) {
         confirmationContainer.innerHTML = '<p>No items confirmed.</p>';

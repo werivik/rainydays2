@@ -435,6 +435,25 @@ header nav ul li {
 }
 
 /*All products page*/
+.go-back-button {
+    margin-left: 60px;
+    margin-top: 20px;
+    list-style-type: none;
+    background-color: #3D626B;
+    width: 160px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: #0A3641;
+        font-weight: bold;
+    }
+}
+.go-back-button a {
+    color: white;
+    list-style-type: none;
+}
 .allproductstoppicturetext {
     position: relative;
     display: inline-block;
@@ -522,6 +541,9 @@ header nav ul li {
 }
 .allproducts-productcards {
     margin-bottom: 150px;
+}
+.product-price-shopping {
+    height: 20px;
 }
 .filters{
     display: inline-flex;
@@ -622,6 +644,25 @@ header nav ul li {
     margin-right: 60px;
     margin-top: 60px;
     width: 100%;
+}
+.bottom-buttons {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.priceText {
+    margin-top: 200px;
+}
+.choose-color {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+.colorCircle {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
 }
 .productinfo {
     width: 600px;
@@ -863,10 +904,60 @@ header nav ul li {
     color: #0A3641;
     font-size: 20px;
 }
+.go-back-button-error {
+    margin-left: 60px;
+    margin-top: 20px;
+    list-style-type: none;
+    background-color: #3D626B;
+    width: 170px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 3px;
 
+    &:hover {
+        background-color: #0A3641;
+        font-weight: bold;
+    }
+}
+.go-back-button-error a {
+    color: white;
+    list-style-type: none;
+}
 
+/*Chceckout Confirmation page*/
+.checkoutcontainer-confirmation {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0A3641;
+    height: 700px;
+}
 
+.checkoutcontainer-confirmation h1 {
+    font-size: 50px;
+}
 
+.checkoutcontainer-confirmation p {
+    font-size: 20px;
+}
+.checkoutcontainer-confirmation p span {
+    font-weight: bold;
+}
+.continue-shopping {
+    background-color: #3D626B;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    &:hover {
+        background-color: #0A3641;
+        scale: 1.2;
+    }
+}
+.continue-shopping a {
+    color: white;
+    text-decoration: none;
+}
 
 
 
