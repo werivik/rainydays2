@@ -18,14 +18,19 @@ function displayShoppingBasket() {
         if (item.price !== null) {
             totalPrice += item.price;
             const formattedPrice = item.price.toFixed(2);
+            let titleWithoutRepetitionCheckout = item.title.replace(/Rainy Days/g, '');
     
             basketHTML += `
             <li class="basketcontainer-looks">
-            <div>
-                <div>${item.title} - Size: ${item.size} - Quantity: ${item.quantity}</div>
-                <div>Price: ${formattedPrice} kr</div>
-                <input type="number" class="remove-quantity" value="1" min="1" max="${item.quantity}">
+            <div class="basketcontainer-looks-div">
+                <div><span>${titleWithoutRepetitionCheckout}</span></div>
+                <div>Size: <span>${item.size}</span></div>
+                <div>Quantity: <span>${item.quantity}</span></div>
+                <div>Price: <span>${formattedPrice} kr</span></div>
+                <div class="buttons-checkout">
+                <input type="number" class="remove-quantity" value="1" min="1" max="${item.quantity}" class="quantity-input">
                 <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
+                </div>
             </div>
         </li>
         `;
@@ -34,7 +39,7 @@ function displayShoppingBasket() {
 
     basketHTML += '</ul>';
     const formattedTotalPrice = totalPrice.toFixed(2);
-    basketHTML += `<p>Total Price: ${formattedTotalPrice} kr</p>`;
+    basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
 
     basketHTML += '<button id="clearButton">Clear Shopping Cart</button>';
 

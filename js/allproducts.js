@@ -113,7 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const data = await response.json();
                 allProducts = data.data;
                 listJackets(data.data);
-            } catch (error) {
+            } 
+            catch (error) {
                 console.error("Error fetching products:", error);
             }
         }

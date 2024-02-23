@@ -361,7 +361,7 @@ async function listFullCard(id, item, outElement) {
         return currentProductTags.some(tag => product.tags.includes(tag));
     });
 
-    const recommendedProducts = matchingProducts.slice(0, 3);
+    const recommendedProducts = matchingProducts.slice(0, 4);
 
     let recommendedProductsHTML = '<div class="recommendedProductsContainer">';
     for (const recommendedProduct of recommendedProducts) {
@@ -379,7 +379,7 @@ async function listFullCard(id, item, outElement) {
     }
     recommendedProductsHTML += '</div>';
 
-    outElement.insertAdjacentHTML('afterend', `<h3>Recommended Products</h3>${recommendedProductsHTML}`);
+    outElement.insertAdjacentHTML('afterend', `<h3 class="RPTitle">Recommended Products</h3>${recommendedProductsHTML}`);
 }
 
 function updateShoppingBasket(id, item, selectedSize, quantity) {

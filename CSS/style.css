@@ -110,6 +110,36 @@ header input[type=text] {
     font-weight: 500;
 }
 
+@media(max-width: 1411px) {
+   header .logo img {
+    margin-left: 110px;
+    height: 75px;
+    width: 150px;
+} 
+header nav ul {
+    gap: 20px;
+}
+header nav ul .headright {
+    gap: 30px;
+    margin-right: 110px;
+}
+header .container-searchbar {
+    min-width: 200px;
+}
+header input[type=text] {
+    width: 160px;
+}
+header nav ul li {
+    font-size: 17px;
+}
+}
+
+@media(max-width: 1132px){
+    header .container-searchbar {
+        display: none;
+    }
+}
+
 .sectioncolor {
     background-color: #E6F0EF;
     height: 100%;
@@ -389,54 +419,27 @@ header input[type=text] {
 .bottomproducts-inline {
     display: inline-flex;
     justify-content:flex-start;
-    gap: 40px;
+    gap: 50px;
+    flex-wrap: nowrap;
 }
+.home-bestsellercard a img {
+    height: 300px;
+    width: 240px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border: solid #3D626B 5px;
+    border-radius: 2px;
+    object-fit: contain;
 
-.home-bestsellers{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 25px;
-    margin-left: 0px;
-    margin-right: 0px;
-    height: 450px;
-    width: 350px;
-    position: relative;
-
-    .home-bestsellercard a img{
-        height: 450px;
-        width: 350px;
-        object-fit: contain;
-        transition: 0.5s;
-
-        &:hover {
-            object-fit: cover;
-        }
-    }
-    
-    .home-bestsellercard {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 25px;
-        transition: 0.3s;
-        background: white;
-        border: 5px solid #3D626B;
-
-        &:hover {
-            transform: scale(1.07);
-            border: 5px solid #0A3641;
-        }
+    &:hover{
+        object-fit: cover;
+        border: solid #0A3641 5px;
+        transform: scale(1.1);
     }
 }
-
-
-
-
-
 
 .allproductstoppicturetext {
     position: relative;
@@ -625,6 +628,24 @@ header input[type=text] {
     width: 100%;
 }
 
+.productinfo {
+    width: 600px;
+}
+
+.productinfo h3 {
+    font-size: 30px;
+}
+
+.descText {
+    font-size: 22px;
+}
+
+.RPTitle {
+    margin-top: 160px;
+    font-size: 30px;
+    color: #0A3641;
+}
+
 #containerdetail{
     margin-top: 0px;
     color: #0A3641;
@@ -687,23 +708,127 @@ header input[type=text] {
     }
 }
 
+.recommendedProductsContainer {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 500px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
 .recommendedProductsCard {
+    height: 450px;
+    width: 275px;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border: solid 5px #3D626B;
+    border-radius: 2px;
+
+    &hover {
+        border: solid 5px #0A3641;
+    }
 }
 
 .recommendedProductsCard img {
-    height: 300px;
-    width: 250px;
+    height: 320px;
+    width: 275px;
     object-fit: contain;
+
+    &:hover {
+        object-fit: cover;
+    }
 }
 
 .checkoutcontainer {
     min-height: 800px;
 }
 
+.recommendedCardText {
+    color: #0A3641;
+    text-decoration: none;
+    border-top: 5px solid #0A3641;
+}
 
 
+.checkoutcontainer {
+    margin-left: 60px;
+    margin-right: 60px;
+    color: #0A3641;
+}
+
+.checkoutcontainer h1 {
+    font-size: 45px;
+}
+
+#basketContainer ul {
+    list-style-type: none;
+    margin-bottom: 120px;
+    width: 100%;
+}
+
+#basketContainer ul .basketcontainer-looks {
+    margin: 0px;
+    list-style-type: none;
+}
+
+.basketcontainer-looks-div {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.remove-quantity {
+    width: 75px;
+}
+
+.TP {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.basketcontainer-looks-div span {
+    font-weight: bold;
+}
+
+.basketcontainer-looks-div .buttons-checkout .quantity-input{
+    padding: 5px;
+}
+
+.basketcontainer-looks-div .buttons-checkout .remove-btn {
+    border: 2px solid #0A3641;
+    border-radius: 5px;
+    padding: 2.5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-image: url(/pictures/buttontexture.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
 
 
+.error-section {
+    height: 900px;
+}
+
+.error-section h1 {
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    color: #0A3641;
+}
+
+.error-section p {
+    display: flex;
+    justify-content: center; 
+    color: #0A3641;
+    font-size: 20px;
+}
 
 
 
