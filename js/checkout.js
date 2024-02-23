@@ -17,6 +17,14 @@ function setupConfirmationButton() {
 function displayShoppingBasket() {
     const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
     const basketContainer = document.getElementById('basketContainer');
+    const confirmationButton = document.getElementById('confirmationButton');
+    if (confirmationButton) {
+        confirmationButton.addEventListener('click', function() {
+            localStorage.setItem('confirmationItems', JSON.stringify(JSON.parse(localStorage.getItem('basketItems')) || [] ));
+            clearShoppingCart();
+            window.location.href = 'checkoutconfirmation.html'
+        })
+    }
 
     if (basketItems.length === 0) {
         basketContainer.innerHTML = '<p class="emptybasket">Your shopping basket is empty, check <a href="allproducts.html">here</a> to fill it up!</p>';
@@ -44,8 +52,9 @@ function displayShoppingBasket() {
                         <div>Quantity: <span>${item.quantity}</span></div>
                         <div class="basket-item-price">Price: <span>${formattedPrice} kr</span></div>
                         <div class="buttons-checkout">
-                        <input type="number" class="remove-quantity" value="1" min="1" max="${item.quantity}" class="quantity-input">
+                        <input type="number" class="quantity-input" value="1" min="1" max="${item.quantity}">
                         <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
+                        <button class="add-btn" data-id="${item.id}">Add Jacket</button>
                         </div>
                     </div>
                 </div>
@@ -56,9 +65,11 @@ function displayShoppingBasket() {
 
     basketHTML += '</div>';
     const formattedTotalPrice = totalPrice.toFixed(2);
+    basketHTML += '<div class="cart-controll-buttons">';
     basketHTML += '<button id="clearButton">Clear Shopping Cart</button>';
     basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
     basketHTML += '<button id="confirmationButton">Proceed to Checkout Confirmation</button>';
+    basketHTML += '</div>';
 
     basketContainer.innerHTML = basketHTML;
 
@@ -67,6 +78,14 @@ function displayShoppingBasket() {
         button.addEventListener('click', function() {
             const itemId = this.getAttribute('data-id');
             removeItem(itemId);
+        });
+    });
+
+    const addButtons = document.querySelectorAll('.add-btn')
+    addButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const itemId = this.getAttribute('data-id');
+            addItem(itemId);
         });
     });
 
@@ -85,15 +104,13 @@ function removeItem(itemId) {
         const removeQuantity = parseInt(document.querySelector(`.remove-btn[data-id="${itemId}"]`).previousElementSibling.value);
 
         if (removeQuantity > 0 && removeQuantity <= item.quantity) {
-
             item.quantity -= removeQuantity;
-
-
-            item.price = item.price / (item.quantity + removeQuantity) * item.quantity;
 
             if (item.quantity === 0) {
                 basketItems.splice(index, 1);
             }
+
+            item.price = item.price / (item.quantity + removeQuantity) * item.quantity;
 
             localStorage.setItem('basketItems', JSON.stringify(basketItems));
             displayShoppingBasket();
@@ -101,6 +118,24 @@ function removeItem(itemId) {
         } 
         else {
             alert('Invalid quantity to remove.');
+        }
+    }
+}
+
+function addItem(itemId) {
+    let basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+    const index = basketItems.findIndex(item => item.id === itemId);
+
+    if (index !== -1) {
+        const item = basketItems[index];
+        const addQuantity = parseInt(document.querySelector(`.add-btn[data-id="${itemId}"]`).previousElementSibling.value);
+
+        if (addQuantity > 0 && addQuantity <= item.quantity) {
+            item.quantity += addQuantity;
+
+            document.querySelector(`.basketcontainer-looks[data-id="${itemId}"] .quantity`).textContent = item.quantity;
+
+            localStorage.setItem('basketItems', JSON.stringify(basketItems));
         }
     }
 }

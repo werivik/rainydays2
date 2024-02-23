@@ -754,11 +754,6 @@ header nav ul li {
     width: 100%;
 }
 
-.basketcontainer-looks {
-    height: 350px;
-    width: 650px;
-}
-
 .basketcontainer-looks-div {
     display: inline-flex;
     flex-direction: column;
@@ -780,6 +775,7 @@ header nav ul li {
 .basket-items {
     display: inline-flex;
     flex-direction: column;
+    gap: 30px;
 }
 
 .basketcontainer-looks-div span {
@@ -792,14 +788,22 @@ header nav ul li {
     padding: 5px;
     border: 3px solid #0A3641;
     border-radius: 5px;
+    width: 650px;
+    height: 300px;
 }
 
 .basket-image-item img {
     width: 250px;
+    height: 300px;
     object-fit: contain;
     background-color: white;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
 }
 
 .basketcontainer-looks-div .buttons-checkout {
@@ -833,12 +837,12 @@ header nav ul li {
     font-size: 15px;
 }
 
-.emptybasket {
-    font-size: 20px
+.cart-controll-buttons {
+    margin-bottom: 120px;
 }
 
-#confirmationButton {
-    margin-bottom: 120px;
+.emptybasket {
+    font-size: 20px
 }
 
 /*Error page*/
