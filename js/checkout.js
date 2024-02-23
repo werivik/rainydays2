@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     displayShoppingBasket();
-    setupConfirmationButton
+    setupConfirmationButton();
 });
+
+function setupConfirmationButton() {
+    const setupConfirmationButton = document.getElementById('confirmationButton');
+    if (confirmationButton) {
+        confirmationButton.addEventListener('click', function() {
+            clearShoppingCart();
+            window.location.href = 'checkoutconfirmation.html';
+        });
+    }
+}
 
 function displayShoppingBasket() {
     const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
@@ -43,6 +53,7 @@ function displayShoppingBasket() {
     basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
 
     basketHTML += '<button id="clearButton">Clear Shopping Cart</button>';
+    basketHTML += '<button id="confirmationButton">Proceed to Checkout Confirmation</button>';
 
     basketContainer.innerHTML = basketHTML;
 
