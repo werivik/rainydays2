@@ -9,6 +9,9 @@
     font-family: 'Squada One', sans-serif;
 */
 
+
+
+/*Header, all pages*/
 header {
     z-index: 9999;
     top: 0;
@@ -169,6 +172,8 @@ header nav ul li {
     align-items: center;
 }
 
+
+/*Index page*/
 .toppicturetext {
     position: relative;
     display: inline-block;
@@ -333,19 +338,16 @@ header nav ul li {
     background-position: center bottom;
     font-size: 35px;
 }
-
 .middlepicturesec {
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 60px;
 }
-
 .middlepicture {
     display: inline-block;
     position: relative;
     width: 100%;
 }
-
 .middlepicture img{
  width: 100%;
  height: 350px;
@@ -353,7 +355,6 @@ header nav ul li {
  border-radius: 2px;
  display: block;
 }
-
 .middlepicturetext {
     position: absolute;
     top: 50%; 
@@ -362,25 +363,21 @@ header nav ul li {
     color: #fff; 
     text-align: center;
 }
-
 .middlepicturetextlogo img{
     height: 100%;
     width: 280px;
 }
-
 .middlepicturetext p {
     font-size: 50px;
     line-height: 5px;
     margin-top: 20px;
     font-family: 'Saira Stencil One', sans-serif;
 }
-
 .middlepicturetext span {
     font-weight: bolder;
     font-size: 80px;
     font-family: 'Squada One', sans-serif;
 }
-
 .middlepicturebutton p {
     position: absolute;
     display: flex;
@@ -395,27 +392,23 @@ header nav ul li {
     border-radius: 5px;
     font-family: 'Squada One', sans-serif;
 }
-
 .middlepicturebutton p:hover {
     background-image: url(/pictures/buttontexture.png);
     background-size: cover;
     background-position: center bottom;
     font-size: 25px;
 }
-
 .bottomproducts {
     margin-left: 60px;
     margin-right: 60px;
     width: 96%;
     margin-bottom: 120px;
 }
-
 .bottomproducts h2 {
     color: #0A3641;
     font-size: 35px;
     font-family: 'Squada One', sans-serif;
 }
-
 .bottomproducts-inline {
     display: inline-flex;
     justify-content:flex-start;
@@ -441,6 +434,7 @@ header nav ul li {
     }
 }
 
+/*All products page*/
 .allproductstoppicturetext {
     position: relative;
     display: inline-block;
@@ -449,14 +443,12 @@ header nav ul li {
     width: 100%;
     margin-top: 150px;
 }
-
 .allproductstoppicturetext img {
     display: block;
     width: 93%;
     height: 350px;
     object-fit: cover;
 }
-
 .allproductstoppicturelefttext {
     position: absolute;
     top: 50%; 
@@ -466,18 +458,15 @@ header nav ul li {
     text-align: center;
     line-height: 0px;
 }
-
 .allproductstoppicturelefttext p{
     font-size: 50px;
     font-family: 'Saira Stencil One', sans-serif;
 }
-
 .allproductstoppicturelefttext span {
     font-size: 52px;
     font-weight: 900;
     font-family: 'Squada One', sans-serif;
 }
-
 .allproductstoppicturerighttext {
     position: absolute;
     top: 50%; 
@@ -488,36 +477,30 @@ header nav ul li {
     line-height: 0px;
     width: 100%;
 }
-
 .allproductstoppicturerighttext p {
     font-size: 50px;   
     font-family: 'Squada One', sans-serif;
 }
-
 .allproductstoppicturerighttext a {
     color: white;
     text-decoration: none;
 }
-
 .allproductstoppicturerighttext span {
     font-size: 110px;
     font-weight: 900;
     font-family: 'Saira Stencil One', sans-serif;
 }
-
 .allproducts-productcards-top {
     display: inline-flex;
     justify-content: space-between;
     width: 100%;
 }
-
 .allproducts-productcards-top h1 {
     float: left;
     margin-left: 60px;
     font-size: 50px;
     color: #0A3641;
 }
-
 .allproducts-productcards-top .filterbutton {
     float: right;
     height: 40px;
@@ -537,11 +520,9 @@ header nav ul li {
         border:solid 1px white;
     }
 }
-
 .allproducts-productcards {
     margin-bottom: 150px;
 }
-
 .filters{
     display: inline-flex;
     align-items: center;
@@ -560,7 +541,6 @@ header nav ul li {
     border-radius: 5px;
     color: white;
 }
-
 .productHolder{
     display: inline-flex;
     flex-wrap: wrap;
@@ -636,35 +616,27 @@ header nav ul li {
     }
 }
 
-#confirmationMessage {
-    font-size: 50px;
-}
-
+/*Product Detail page*/
 .productdetailcontainer {
     margin-left: 60px;
     margin-right: 60px;
     margin-top: 60px;
     width: 100%;
 }
-
 .productinfo {
     width: 600px;
 }
-
 .productinfo h3 {
     font-size: 30px;
 }
-
 .descText {
     font-size: 22px;
 }
-
 .RPTitle {
     margin-top: 160px;
     font-size: 30px;
     color: #0A3641;
 }
-
 #containerdetail{
     margin-top: 0px;
     color: #0A3641;
@@ -726,7 +698,6 @@ header nav ul li {
         width: 120px;
     }
 }
-
 .recommendedProductsContainer {
     display: inline-flex;
     justify-content: space-between;
@@ -735,7 +706,6 @@ header nav ul li {
     margin-top: 30px;
     margin-bottom: 60px;
 }
-
 .recommendedProductsCard {
     height: 450px;
     width: 275px;
@@ -749,7 +719,6 @@ header nav ul li {
         border: solid 5px #0A3641;
     }
 }
-
 .recommendedProductsCard img {
     height: 320px;
     width: 275px;
@@ -759,18 +728,16 @@ header nav ul li {
         object-fit: cover;
     }
 }
-
-.checkoutcontainer {
-    min-height: 800px;
-}
-
 .recommendedCardText {
     color: #0A3641;
     text-decoration: none;
     border-top: 5px solid #0A3641;
 }
 
-
+/*Checkout page, also knows as Shopping cart, shopping basket...*/
+.checkoutcontainer {
+    min-height: 800px;
+}
 .checkoutcontainer {
     margin-left: 60px;
     margin-right: 60px;
@@ -781,15 +748,15 @@ header nav ul li {
     font-size: 45px;
 }
 
-#basketContainer ul {
+#basketContainer .basket-items {
     list-style-type: none;
     margin-bottom: 120px;
     width: 100%;
 }
 
-#basketContainer ul .basketcontainer-looks {
-    margin: 0px;
-    list-style-type: none;
+.basketcontainer-looks {
+    height: 350px;
+    width: 650px;
 }
 
 .basketcontainer-looks-div {
@@ -797,6 +764,8 @@ header nav ul li {
     flex-direction: column;
     gap: 10px;
     font-size: 20px;
+    justify-content: center;
+    padding-right: 10px;
 }
 
 .remove-quantity {
@@ -808,8 +777,42 @@ header nav ul li {
     font-size: 25px;
 }
 
+.basket-items {
+    display: inline-flex;
+    flex-direction: column;
+}
+
 .basketcontainer-looks-div span {
     font-weight: bold;
+}
+
+.basket-row {
+    display: inline-flex;
+    background-color: white;
+    padding: 5px;
+    border: 3px solid #0A3641;
+    border-radius: 5px;
+}
+
+.basket-image-item img {
+    width: 250px;
+    object-fit: contain;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.basketcontainer-looks-div .buttons-checkout {
+    margin-top: 15px;
+}
+
+.basket-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.basket-item-price {
+    margin-top: 25px;
 }
 
 .basketcontainer-looks-div .buttons-checkout .quantity-input{
@@ -830,7 +833,15 @@ header nav ul li {
     font-size: 15px;
 }
 
+.emptybasket {
+    font-size: 20px
+}
 
+#confirmationButton {
+    margin-bottom: 120px;
+}
+
+/*Error page*/
 .error-section {
     height: 900px;
 }
@@ -864,7 +875,7 @@ header nav ul li {
 
 
 
-
+/*Footer, all pages*/
 footer {
     background-color: #0A3641;
     width: 100%;

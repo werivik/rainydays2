@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function setupConfirmationButton() {
-    const setupConfirmationButton = document.getElementById('confirmationButton');
+    const confirmationButton = document.getElementById('confirmationButton');
     if (confirmationButton) {
         confirmationButton.addEventListener('click', function() {
+            localStorage.setItem('confirmedItems', JSON.stringify(JSON.parse(localStorage.getItem('basketItems')) || [] ));
             clearShoppingCart();
             window.location.href = 'checkoutconfirmation.html';
         });
@@ -18,12 +19,12 @@ function displayShoppingBasket() {
     const basketContainer = document.getElementById('basketContainer');
 
     if (basketItems.length === 0) {
-        basketContainer.innerHTML = '<p>Your shopping basket is empty.</p>';
+        basketContainer.innerHTML = '<p class="emptybasket">Your shopping basket is empty, check <a href="allproducts.html">here</a> to fill it up!</p>';
         return;
     }
 
     let totalPrice = 0;
-    let basketHTML = '<ul>';
+    let basketHTML = '<div class="basket-items">';
 
     basketItems.forEach(item => {
         if (item.price !== null) {
@@ -32,27 +33,31 @@ function displayShoppingBasket() {
             let titleWithoutRepetitionCheckout = item.title.replace(/Rainy Days/g, '');
     
             basketHTML += `
-            <li class="basketcontainer-looks">
-            <div class="basketcontainer-looks-div">
-                <div><span>${titleWithoutRepetitionCheckout}</span></div>
-                <div>Size: <span>${item.size}</span></div>
-                <div>Quantity: <span>${item.quantity}</span></div>
-                <div>Price: <span>${formattedPrice} kr</span></div>
-                <div class="buttons-checkout">
-                <input type="number" class="remove-quantity" value="1" min="1" max="${item.quantity}" class="quantity-input">
-                <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
+            <div class="basketcontainer-looks">
+                <div class="basket-row">
+                    <div class="basket-image-item">
+                        <img src="${item.image.url}" alt="${item.description}">
+                    </div>
+                    <div class="basketcontainer-looks-div">
+                        <div class="basket-title"><span>${titleWithoutRepetitionCheckout}</span></div>
+                        <div>Size: <span>${item.size}</span></div>
+                        <div>Quantity: <span>${item.quantity}</span></div>
+                        <div class="basket-item-price">Price: <span>${formattedPrice} kr</span></div>
+                        <div class="buttons-checkout">
+                        <input type="number" class="remove-quantity" value="1" min="1" max="${item.quantity}" class="quantity-input">
+                        <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </li>
         `;
         }
     });
 
-    basketHTML += '</ul>';
+    basketHTML += '</div>';
     const formattedTotalPrice = totalPrice.toFixed(2);
-    basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
-
     basketHTML += '<button id="clearButton">Clear Shopping Cart</button>';
+    basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
     basketHTML += '<button id="confirmationButton">Proceed to Checkout Confirmation</button>';
 
     basketContainer.innerHTML = basketHTML;
