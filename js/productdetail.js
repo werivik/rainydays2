@@ -292,26 +292,6 @@ async function getCard(id, outElement) {
     }
 }
 
-function createCard(product) {
-    let recommendedProductsHTML = '<div class="recommendedProductsContainer">';
-    products.forEach(product => {
-        const titleWithoutRepetitionProduct = product.title.replace(/Rainy Days/g, '').trim();
-        recommendedProductsHTML += `
-        <div class="recommendedProductsCard">
-        <a href="jackets-details.html?id=${product.id}">
-            <img src="${product.image.url}" alt="${product.description}">
-            <div class="recommendedCardText">
-                <h2>${titleWithoutRepetitionProduct}</h2>
-                <p>${product.price} kr</p>
-            </div>
-        </a>
-    </div>
-    `;   
-    });
-    recommendedProductsHTML += '</div>';
-    return recommendedProductsHTML;
-} 
-
 async function listFullCard(id, item, outElement) {
     console.log('Product details:', id, item);
     let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
@@ -383,10 +363,21 @@ async function listFullCard(id, item, outElement) {
 
     const recommendedProducts = matchingProducts.slice(0, 3);
 
-    let recommendedProductsHTML = '';
+    let recommendedProductsHTML = '<div class="recommendedProductsContainer">';
     for (const recommendedProduct of recommendedProducts) {
-        recommendedProductsHTML += createCard(recommendedProduct);
+        const titleWithoutRepetitionProduct = recommendedProduct.title.replace(/Rainy Days/g, '').trim();
+        recommendedProductsHTML +=`
+        <div class="recommendedProductsCard">
+            <a href="jackets-details.html?id=${recommendedProduct.id}">
+                <img src="${recommendedProduct.image.url}" alt="${recommendedProduct.description}">
+                <div class="recommendedCardText">
+                    <h2>${titleWithoutRepetitionProduct}</h2>
+                    <p>${recommendedProduct.price} kr</p>
+                </div>
+            </a>
+        </div>`;
     }
+    recommendedProductsHTML += '</div>';
 
     outElement.insertAdjacentHTML('afterend', `<h3>Recommended Products</h3>${recommendedProductsHTML}`);
 }
