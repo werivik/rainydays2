@@ -293,15 +293,23 @@ async function getCard(id, outElement) {
 }
 
 function createCard(product) {
-    return `
-    <div class="recommendedProductsCard">
-    <img src="${product.image.url}" alt="${product.description}">
-    <div class="recommendedCardText">
-        <h2>${product.title}</h2>
-        <p>${product.price}</p>
+    let recommendedProductsHTML = '<div class="recommendedProductsContainer">';
+    products.forEach(product => {
+        const titleWithoutRepetitionProduct = product.title.replace(/Rainy Days/g, '').trim();
+        recommendedProductsHTML += `
+        <div class="recommendedProductsCard">
+        <a href="jackets-details.html?id=${product.id}">
+            <img src="${product.image.url}" alt="${product.description}">
+            <div class="recommendedCardText">
+                <h2>${titleWithoutRepetitionProduct}</h2>
+                <p>${product.price} kr</p>
+            </div>
+        </a>
     </div>
-</div>
-    `;
+    `;   
+    });
+    recommendedProductsHTML += '</div>';
+    return recommendedProductsHTML;
 } 
 
 async function listFullCard(id, item, outElement) {
