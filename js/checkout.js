@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     displayShoppingBasket();
+    setupConfirmationButton
 });
 
 function displayShoppingBasket() {

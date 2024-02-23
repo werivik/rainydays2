@@ -85,25 +85,29 @@
             <div class="allproducts-productcards-top">
                 <h1>All Jackets</h1>
 
+                <div id="loadingMessage" style="display: none;">Loading...</div>
                 <div class="filters">
-                    <label for="genderFilter">Gender</label>
-                    <select id="genderFilter">
-                        <option value="all">Both</option>
-                        <option value="men">Men</option>
-                        <option value="women">Women</option>
-                    </select>
-
-                    <label for="colorFilter">Color</label>
-                    <select id="colorFilter">
-                        <option value="all">All</option>
-                        <option value="red">Red</option>
-                        <option value="black">Black</option>
-                        <option value="green">Green</option>
-                        <option value="gray">Gray</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="blue">Blue</option>
-                        <option value="purple">Purple</option>
-                    </select>
+                    <div class="genderfilter-filter">
+                        <label for="genderFilter">Gender: </label>
+                        <select id="genderFilter">
+                            <option value="all">Both</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                        </select>
+                    </div>
+                    <div class="colorfilter-filter">
+                        <label for="colorFilter">Color: </label>
+                        <select id="colorFilter">
+                            <option value="all">All</option>
+                            <option value="red">Red</option>
+                            <option value="black">Black</option>
+                            <option value="green">Green</option>
+                            <option value="gray">Gray</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                            <option value="purple">Purple</option>
+                        </select>
+                    </div>
                 </div>
 
             </div>

@@ -542,6 +542,25 @@ header nav ul li {
     margin-bottom: 150px;
 }
 
+.filters{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 60px;
+    gap: 30px;
+}
+#genderFilter {
+    background-color: #0A3641;
+    border-radius: 5px;
+    color: white;
+    border: solid 2px #0A3641;
+}
+#colorFilter {
+    background-color: #0a3641;
+    border: solid 2px #0A3641;
+    border-radius: 5px;
+    color: white;
+}
+
 .productHolder{
     display: inline-flex;
     flex-wrap: wrap;

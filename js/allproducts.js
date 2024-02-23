@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const getAllProducts = async (URL) => {
             try {
+                loadingMessage.style.display = "block";
                 const response = await fetch(URL);
                 const data = await response.json();
                 allProducts = data.data;
@@ -116,6 +117,9 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
             catch (error) {
                 console.error("Error fetching products:", error);
+            }
+            finally {
+                loadingMessage.style.display = "none";
             }
         }
 
