@@ -53,9 +53,7 @@ function displayShoppingBasket() {
                         <div class="basket-item-price">Price: <span>${formattedPrice} kr</span></div>
                         <div class="buttons-checkout">
                         <input type="number" class="quantity-input" value="1" min="1" max="${item.quantity}">
-                        <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
-                        <button class="add-btn" data-id="${item.id}">Add Jacket</button>
-                        </div>
+                        <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>                        </div>
                     </div>
                 </div>
             </div>
@@ -78,14 +76,6 @@ function displayShoppingBasket() {
         button.addEventListener('click', function() {
             const itemId = this.getAttribute('data-id');
             removeItem(itemId);
-        });
-    });
-
-    const addButtons = document.querySelectorAll('.add-btn')
-    addButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const itemId = this.getAttribute('data-id');
-            addItem(itemId);
         });
     });
 
@@ -118,24 +108,6 @@ function removeItem(itemId) {
         } 
         else {
             alert('Invalid quantity to remove.');
-        }
-    }
-}
-
-function addItem(itemId) {
-    let basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
-    const index = basketItems.findIndex(item => item.id === itemId);
-
-    if (index !== -1) {
-        const item = basketItems[index];
-        const addQuantity = parseInt(document.querySelector(`.add-btn[data-id="${itemId}"]`).previousElementSibling.value);
-
-        if (addQuantity > 0 && addQuantity <= item.quantity) {
-            item.quantity += addQuantity;
-
-            document.querySelector(`.basketcontainer-looks[data-id="${itemId}"] .quantity`).textContent = item.quantity;
-
-            localStorage.setItem('basketItems', JSON.stringify(basketItems));
         }
     }
 }
