@@ -1,79 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const products = document.querySelector(".productHolder");
-
-//     if (products) {
-//         const URL = "https://v2.api.noroff.dev/rainy-days/";
-//         let allProducts = [];
-
-//         function createCard(item) {
-//             console.log(item);
-
-//             let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
-
-//             let code = ` 
-//                 <div class="card">
-//                     <a href="jackets-details.html?id=${item.id}">
-//                         <img src="${item.image.url}" alt="${item.description}">
-//                         <div class="cardText">
-//                             <p class="categoryText">${item.gender}</p>
-//                              <h2 class="productTitle">${titleWithoutRepetition}</h2>
-//                         </div>
-//                     </a>
-//                     <div class="product-price-shopping">
-//                         <p class="priceText">${item.price}</p>
-//                         <p class="priceText"><i class="fa-solid fa-cart-shopping"></i></p>
-//                     </div>
-//                     <div class="product-invisible-filter">
-//                     <p class="priceText">${item.baseColor}</p>
-//                 </div>
-//                 </div>
-//             `;
-//             return code;
-//         }
-
-//         const getAllProducts = async (URL) => {
-//             try {
-//                 const response = await fetch(URL);
-//                 const data = await response.json();
-//                 allProducts = data.data;
-//                 listJackets(data.data);
-//             } catch (error) {
-//                 console.error("Error fetching products:", error);
-//             }
-//         }
-
-//         function listJackets(list) {
-//             let output = "";
-//             for (const jacket of list) {
-//                 output += createCard(jacket);
-//             }
-//             products.innerHTML = output;
-//         }
-
-//         function filterByGender(gender) {
-//             const filteredProducts = allProducts.filter(product => product.gender.toLowerCase()=== gender.toLowerCase());
-//             listJackets(filteredProducts);
-//         }
-
-//         getAllProducts(URL);
-
-//         const genderFilterSelect = document.getElementById('genderFilter');
-//         genderFilterSelect.addEventListener('change', function() {
-//             const selectedGender = genderFilterSelect.value;
-//             if (selectedGender === 'all') {
-//                 listJackets(allProducts);
-//             }
-//             else {
-//                 filterByGender(selectedGender);
-//             }
-//         });
-
-//     } else {
-//         console.error("Element with class 'productHolder' not found.");
-//     }
-
-// });
-
 document.addEventListener("DOMContentLoaded", function() {
     const products = document.querySelector(".productHolder");
 
@@ -97,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     </a>
                     <div class="product-price-shopping">
                         <p class="priceText">${item.price}</p>
-                        <p class="priceText"><i class="fa-solid fa-cart-shopping"></i></p>
                     </div>
                     <div class="product-invisible-filter">
                     <p class="priceText">${item.baseColor}</p>
@@ -197,16 +120,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Element with class 'productHolder' not found.");
     }
 });
-
-
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function() {
 //     const products = document.querySelector(".productHolder");
 
 //     if (products) {
