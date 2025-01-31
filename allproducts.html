@@ -2,14 +2,17 @@
 <html lang="en">
 
     <head>
-        <title>Rainy Days All Jackets</title>
+        <title>Rainy Days - All Jackets</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Weronika Vik">
         <meta name="description" content="Rainy Days Homepage">
       
-        <link rel="stylesheet" type="text/css" href="CSS\style.css">
+        <link rel="stylesheet" href="/CSS/body.css">
+        <link rel="stylesheet" href="/CSS/header.css">
+        <link rel="stylesheet" href="/CSS/footer.css">
+        <link rel="stylesheet" href="/CSS/allproducts.css">
         <script type="module" src="js/allproducts.js"></script>
         <script type="module" src="js/productdetail.js" defer></script> 
               
@@ -20,109 +23,94 @@
     <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous">
     </script>
         
-    <main> 
-
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
-        </div>
-        
             <nav>
-               <ul>
-                <li>
-                    <a href="index.html">Homepage</a>
-                </li>
-                <li class="activehover">
-                    <a href="allproducts.html">All Jakcets</a>
-               </li>
-                <li class="shortlink">
-                    <a href="error.html">News</a>
-                </li>
-                <li class="shortlink">
-                 <a href="error.html">Tips</a>
-                </li>
-                </ul>
-                <div class="container-searchbar">
-                    <input id="searchbar"
-                           onkeyup="search_jackets()"
-                           type="text" name="search"
-                           placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
-        
+                <div class="logo">
+                    <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
                 </div>
-                <ul>
-                    <li class="headright">
-                        <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                        <i class="fa-regular fa-circle-user"></i>
-                    </li>
-                </ul>
+                <li class="links">
+                    <a href="index.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Homepage</a>
+                    <a href="allproducts.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">All Jackets</a>
+                    <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">News</a>
+                    <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Tips</a>
+                    <div class="container-searchbar">
+                        <input id="searchbar"
+                               onkeyup="search_jackets()"
+                               type="text" name="search"
+                               placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
+                 
+                    </div>
+                </li>
+                <li class="head-right">
+                    <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <i class="fa-regular fa-circle-user"></i>
+                </li>
             </nav>
-     </header>
+            <div class="colorline">
+                <p>Free shipping for orders over 850kr</p>
+             </div>
+    </header>
 
-     <div class="colorline">
-        <p>Free shipping for orders over 850kr</p>
-     </div>
-
-     <section class="sectioncolor">
-
-        <div class="allproductstoppicturetext">
-            <div class="toppicture">
-                <div class="allproductstoppicturelrtext">
-                    <div class="allproductstoppicturelefttext">
-                        <p>Pushing the</p>
-                        <p><span>COMFORT ZONE</span></p>
+    <main> 
+        <section class="top-banner">
+            <div class="allproductstoppicturetext">
+                <div class="toppicture">
+                    <div class="allproductstoppicturelrtext">
+                        <div class="allproductstoppicturelefttext">
+                            <p>Pushing the</p>
+                            <p><span>COMFORT ZONE</span></p>
+                        </div>
+                        <div class="allproductstoppicturerighttext">
+                            <a href=""><p><span>20%</span></p></a>
+                            <p>off all jackets</p>
+                        </div>
                     </div>
-                    <div class="allproductstoppicturerighttext">
-                        <a href=""><p><span>20%</span></p></a>
-                        <p>off all jackets</p>
-                    </div>
+                    <img src="/pictures/hiking2edit.jpeg" alt="">
                 </div>
-                <img src="/pictures/hiking2edit.jpeg" alt="">
             </div>
-        </div>
+        </section>
 
-        <div class="allproducts-productcards">
+        <section class="products-section">
+            <div class="products-border">
 
-            <div class="go-back-button">
-                <a href="index.html"><i class="fa-solid fa-chevron-left"></i> Go Back to Browsing</a>
-            </div>
+                <div class="title-filter">
+                    <h1>All Jackets</h1>
 
-            <div class="allproducts-productcards-top">
+                    <div id="loadingMessage" style="display: none;">Loading...</div>
 
-                <h1>All Jackets</h1>
-
-                <div id="loadingMessage" style="display: none;">Loading...</div>
-                <div class="filters">
-                    <div class="genderfilter-filter">
-                        <label for="genderFilter">Gender: </label>
-                        <select id="genderFilter">
-                            <option value="all">Both</option>
-                            <option value="men">Men</option>
-                            <option value="women">Women</option>
-                        </select>
+                    <div class="filters">
+                        <div class="genderfilter-filter">
+                            <label for="genderFilter">Gender: </label>
+                            <select id="genderFilter">
+                                <option value="all">Both</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                            </select>
+                        </div>
+                        <div class="colorfilter-filter">
+                            <label for="colorFilter">Color: </label>
+                            <select id="colorFilter">
+                                <option value="all">All</option>
+                                <option value="red">Red</option>
+                                <option value="black">Black</option>
+                                <option value="green">Green</option>
+                                <option value="gray">Gray</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="blue">Blue</option>
+                                <option value="purple">Purple</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="colorfilter-filter">
-                        <label for="colorFilter">Color: </label>
-                        <select id="colorFilter">
-                            <option value="all">All</option>
-                            <option value="red">Red</option>
-                            <option value="black">Black</option>
-                            <option value="green">Green</option>
-                            <option value="gray">Gray</option>
-                            <option value="Yellow">Yellow</option>
-                            <option value="blue">Blue</option>
-                            <option value="purple">Purple</option>
-                        </select>
-                    </div>
+
+                </div>
+
+                <div class="productholder">
                 </div>
 
             </div>
+        </section>
 
-            <div class="productHolder">
-            </div>
-
-        </div>
-
-     </section>
+    </main>
 
     <footer>
         <div class="footertext">
@@ -160,8 +148,6 @@
             <img src="/pictures/RainyDays_Logowhite.png" alt="">
         </div>
     </footer>
-
-    </main>
 
 </body>
 

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const productsContainer = document.querySelector(".bottomproducts-inline");
+    const productsContainer = document.querySelector(".featured-products");
 
     if (productsContainer) {
         const URL = "https://v2.api.noroff.dev/rainy-days/";
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function createCard(bestSeller) {
             let code = `
-                <div class="home-bestsellercard">
+                <div class="bestsellercard">
                     <a href="jackets-details.html?id=${bestSeller.id}">
                         <img src="${bestSeller.image.url}" alt="${bestSeller.description}">
                     </a>

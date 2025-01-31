@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Saira+Stencil+One&family=Squada+One&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #E6F0EF;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+    color: #0A3641;
+    
+    display: flex;
+    flex-direction: column;
+}

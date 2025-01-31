@@ -31,7 +31,9 @@ async function getCard(id, outElement) {
 
         listFullCard(id, data.data, outElement); 
 
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error(error);
         outElement.innerHTML = 'Failed to fetch product data. Please try again later.';
     }
@@ -41,41 +43,43 @@ async function listFullCard(id, item, outElement) {
     console.log('Product details:', id, item);
     let titleWithoutRepetition = item.title.replace(/Rainy Days/g, '');
     const code = `
-    <div id="containerdetail" class="productHolderDetail">
+<div id="containerdetail" class="productHolderDetail">
     <div id="${id}" class="detail-div">
-        <div class="top-part">
-            <div class="detail-all-photos">
-                <div class="mini-pictures">
-                    <img src="${item.image.url}" alt="${item.description}">
-                    <img src="${item.image.url}" alt="${item.description}">
-                    <img src="${item.image.url}" alt="${item.description}">
-                </div>
-                <img src="${item.image.url}" alt="${item.description}">
-            </div>
-        <div class="cardText">
-            <h2 class="productTitle">${titleWithoutRepetition}</h2>
-            <p class="categoryText">${item.gender}</p>
-            <p class="priceText">${item.price} kr</p>
-            <div class="bottom-buttons">
-                <div class="choose-color">
-                    <span class="colorCircle" style="background-color: ${item.baseColor};"></span>
-                    <p class="colorText">${item.baseColor}</p>
-                </div>
-                <select id="sizeSelect">
-                    <option value="" disabled selected>Size</option>
-                    ${item.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-                </select>
-                <input type="number" id="quantityInput" value="0" min="0">
-                <button id="addToBasketBtn">Add to Basket</button>
-            </div>
+        <div class="detail-image">
+            <img src="${item.image.url}" alt="${item.description}">
         </div>
 
+        <div class="cardText">
+
+                <div class="title-gender">
+                    <h2 class="productTitle">${titleWithoutRepetition}</h2>
+                    <p class="categoryText">${item.gender}</p>
+                </div>
+
+                <div class="productinfo">
+                    <h3>Product Information</h3>
+                    <p class="descText">${item.description}</p>
+                        <div class="choose-color">
+                            <span class="colorCircle" style="background-color: ${item.baseColor};"></span>
+                            <p class="colorText">${item.baseColor}</p>
+                        </div>
+                </div>
+
+                <div class="bottom-info">
+                        <p class="priceText">kr ${item.price}</p>
+
+                    <div class="bottom-buttons">
+                        <select id="sizeSelect" class="size">
+                            <option value="" disabled selected>Size</option>
+                            ${item.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                        </select>
+                        <input type="number" id="quantityInput" value="0" min="0" class="number">
+                        <button id="addToBasketBtn" class="add-basket">Add to Basket</button>
+                    </div>
+
+                </div>
         </div>
-    <div class="productinfo">
-        <h3>Product Information</h3>
-        <p class="descText">${item.description}</p>
     </div>
-</div>
 </div>
     `;
     outElement.innerHTML = code;
@@ -147,7 +151,9 @@ function updateShoppingBasket(id, item, selectedSize, quantity) {
     if (existingItemIndex !== -1) {
         basketItems[existingItemIndex].quantity += parseInt(quantity);
         basketItems[existingItemIndex].price += totalPrice;
-    } else {
+    } 
+    
+    else {
         basketItems.push(basketItem);
     }
     localStorage.setItem('basketItems', JSON.stringify(basketItems));

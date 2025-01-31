@@ -1,0 +1,266 @@
+.top-banner {
+    margin-top: 140px;
+    width: 100%;
+    height: 70vh;
+    padding: 0;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    .banner-border {
+        width: 80%;
+        height: 100%;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        left: 6%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .text-left {
+            color: white;
+            padding: 0;
+            margin: 0;
+            p {
+                font-size: 65px;
+                padding: 0;
+                margin: 0;
+                margin-bottom: -40px;
+                font-family: 'Saira Stencil One', sans-serif;
+
+                span {
+                    font-weight: 900;
+                    font-size: 70px;
+                    padding: 0;
+                    margin: 0;
+                    font-family: 'Squada One', sans-serif;
+                }
+            }
+        }
+
+        .text-right {
+            color: white;
+            a {
+                font-family: 'Saira Stencil One', sans-serif;
+                color: white;
+                text-decoration: none;
+                font-size: 120px;
+                padding: 0;
+            }
+            p {
+                font-family: 'Squada One', sans-serif;
+                font-size: 50px;
+                margin-top: -60px;
+                margin-bottom: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.shortcut-section {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .shortcut-border {
+        width: 80%;
+        height: 100%;
+
+        .all-shortcuts {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .shortcut {
+                width: 315px;
+                height: 450px;
+                position: relative;
+                border-radius: 10px;
+                border: solid #3D626B 5px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+
+                .shortcut-title {
+                    position: absolute;
+                    top: 50%;
+                    bottom: 50%;
+                    left: 50%;
+                    transform: translate(-50%);
+                    background-color: #3D626B;
+                    height: 50px;
+                    width: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 25px;
+                    border-radius: 5px;
+                    font-family: 'Squada One', sans-serif;
+                }
+
+                &:hover {
+                    transition: 0.2s;
+                    border-color: #0A3641;
+                    margin-top: -15px;
+
+                    .shortcut-title {
+                        transition: 0.2s;
+                        background-color: #0A3641; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.break-section {
+    width: 100%;
+    height: 350px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .break-content {
+        width: 80%;
+        height: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .break-text {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .break-logo {
+                width: 260px;
+                object-fit: contain;
+            }
+
+            p {
+                font-size: 47px;
+                line-height: 5px;
+                margin-top: 20px;
+                font-family: 'Saira Stencil One', sans-serif;
+            }
+
+            span {
+                font-weight: bolder;
+                font-size: 80px;
+                font-family: 'Squada One', sans-serif;
+                line-height: 5px;
+            }
+
+            .break-button {
+                margin-top: 30px;
+                p {
+                    font-size: 20px;
+                    background-color: #3D626B;
+                    height: 50px;
+                    width: 240px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 5px;
+
+                    &:hover {
+                        transition: 0.2s;
+                        cursor: pointer;
+                        background-color: #0A3641;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.featured-section {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 180px;
+    display: flex;
+    justify-content: center;
+    
+    .featured-border {
+        width: 80%;
+
+        h2 {
+            font-size: 50px;
+            font-family: 'Squada One', sans-serif;
+            color: #0A3641;
+        }
+
+        .featured-more {
+            margin-top: 50px;
+            width: 100%;
+            margin-left: 95%;
+            color: #0A3641;
+        }
+
+        .featured-products {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .bestsellercard {
+                width: 250px;
+                height: 350px;
+                border: solid #3D626B 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: white;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+
+                &:hover {
+                    border-color: #0A3641;
+                    transition: 0.2s;
+                    margin-top: -15px;
+                }
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ function setupConfirmationButton() {
     const confirmationButton = document.getElementById('confirmationButton');
     if (confirmationButton) {
         confirmationButton.addEventListener('click', function() {
-            localStorage.setItem('confirmedItems', JSON.stringify(JSON.parse(localStorage.getItem('basketItems')) || [] ));
+            localStorage.setItem('confirmedItems', JSON.stringify(JSON.parse(localStorage.getItem('basketItems')) || []));
             clearShoppingCart();
             window.location.href = 'checkoutconfirmation.html';
         });
@@ -17,14 +17,15 @@ function setupConfirmationButton() {
 function displayShoppingBasket() {
     const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
     const basketContainer = document.getElementById('basketContainer');
-    const confirmationButton = document.getElementById('confirmationButton');
-    if (confirmationButton) {
-        confirmationButton.addEventListener('click', function() {
-            localStorage.setItem('confirmationItems', JSON.stringify(JSON.parse(localStorage.getItem('basketItems')) || [] ));
-            clearShoppingCart();
-            window.location.href = 'checkoutconfirmation.html'
-        })
+    const cartControlButtons = document.querySelector('.cart-controll-buttons');
+
+    if (!basketContainer || !cartControlButtons) {
+        console.error("Basket container or cart control buttons div not found.");
+        return;
     }
+
+    basketContainer.innerHTML = '';
+    cartControlButtons.innerHTML = '';
 
     if (basketItems.length === 0) {
         basketContainer.innerHTML = '<p class="emptybasket">Your shopping basket is empty, check <a href="allproducts.html">here</a> to fill it up!</p>';
@@ -41,48 +42,52 @@ function displayShoppingBasket() {
             let titleWithoutRepetitionCheckout = item.title.replace(/Rainy Days/g, '');
     
             basketHTML += `
-            <div class="basketcontainer-looks">
                 <div class="basket-row">
                     <div class="basket-image-item">
                         <img src="${item.image.url}" alt="${item.description}">
                     </div>
-                    <div class="basketcontainer-looks-div">
+                    <div class="basket-info">
                         <div class="basket-title"><span>${titleWithoutRepetitionCheckout}</span></div>
                         <div>Size: <span>${item.size}</span></div>
-                        <div>Quantity: <span>${item.quantity}</span></div>
                         <div class="basket-item-price">Price: <span>${formattedPrice} kr</span></div>
                         <div class="buttons-checkout">
-                        <input type="number" class="quantity-input" value="1" min="1" max="${item.quantity}">
-                        <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>                        </div>
+                            <input type="number" class="quantity-input" value="1" min="1" max="${item.quantity}">
+                            <button class="remove-btn" data-id="${item.id}">Remove from Cart</button>
+                            <div class="quantity">Quantity: <span>${item.quantity}</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
         `;
         }
     });
 
     basketHTML += '</div>';
-    const formattedTotalPrice = totalPrice.toFixed(2);
-    basketHTML += '<div class="cart-controll-buttons">';
-    basketHTML += '<button id="clearButton">Clear Shopping Cart</button>';
-    basketHTML += `<p class="TP">Total Price: ${formattedTotalPrice} kr</p>`;
-    basketHTML += '<button id="confirmationButton">Proceed to Checkout Confirmation</button>';
-    basketHTML += '</div>';
-
     basketContainer.innerHTML = basketHTML;
 
-    const removeButtons = document.querySelectorAll('.remove-btn');
-    removeButtons.forEach(button => {
+    const formattedTotalPrice = totalPrice.toFixed(2);
+
+    cartControlButtons.innerHTML = `
+        <p class="TP">Total Price: ${formattedTotalPrice} kr</p>
+        <button id="confirmationButton" class="confirm-checkout">Checkout</button>
+    `;
+
+    document.getElementById('clearButton').addEventListener('click', clearShoppingCart);
+
+    const confirmationButton = document.getElementById('confirmationButton');
+    if (confirmationButton) {
+        confirmationButton.addEventListener('click', function() {
+            localStorage.setItem('confirmedItems', JSON.stringify(basketItems));
+            clearShoppingCart();
+            window.location.href = 'checkoutconfirmation.html';
+        });
+    }
+
+    document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', function() {
             const itemId = this.getAttribute('data-id');
             removeItem(itemId);
         });
     });
-
-    const clearButton = document.getElementById('clearButton');
-    if (clearButton) {
-        clearButton.addEventListener('click', clearShoppingCart);
-    }
 }
 
 function removeItem(itemId) {
@@ -98,14 +103,14 @@ function removeItem(itemId) {
 
             if (item.quantity === 0) {
                 basketItems.splice(index, 1);
+            } else {
+                item.price = (item.price / (item.quantity + removeQuantity)) * item.quantity;
             }
-
-            item.price = item.price / (item.quantity + removeQuantity) * item.quantity;
 
             localStorage.setItem('basketItems', JSON.stringify(basketItems));
             displayShoppingBasket();
-
         } 
+        
         else {
             alert('Invalid quantity to remove.');
         }

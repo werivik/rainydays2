@@ -11,6 +11,10 @@
       
        <link rel="stylesheet" type="text/css" href="CSS\style.css"> 
        <script src="js/bestsellers.js" type="module" defer></script>
+       <link rel="stylesheet" href="/CSS/header.css">
+       <link rel="stylesheet" href="/CSS/body.css">
+       <link rel="stylesheet" href="/CSS/index.css">
+       <link rel="stylesheet" href="/CSS/footer.css">
       
     </head>
 
@@ -19,28 +23,16 @@
     <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous">
     </script>
 
-    <main> 
-
-     <header>
+<header>
+    <nav>
         <div class="logo">
             <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
         </div>
-    
-        <nav>
-           <ul>
-            <li class="activehover">
-                <a href="index.html">Homepage</a>
-            </li>
-            <li>
-                <a href="allproducts.html">All Jakcets</a>
-           </li>
-            <li class="shortlink">
-                <a href="error.html">News</a>
-            </li>
-            <li class="shortlink">
-             <a href="error.html">Tips</a>
-            </li>
-            </ul>
+        <li class="links">
+            <a href="index.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Homepage</a>
+            <a href="allproducts.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">All Jackets</a>
+            <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">News</a>
+            <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Tips</a>
             <div class="container-searchbar">
                 <input id="searchbar"
                        onkeyup="search_jackets()"
@@ -48,107 +40,90 @@
                        placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
          
             </div>
-            <ul>
-                <li class="headright">
-                    <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                    <i class="fa-regular fa-circle-user"></i>
-                </li>
-            </ul>
-        </nav>
-     </header>
-
-     <div class="colorline">
+        </li>
+        <li class="head-right">
+            <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i class="fa-regular fa-circle-user"></i>
+        </li>
+    </nav>
+    <div class="colorline">
         <p>Free shipping for orders over 850kr</p>
      </div>
+</header>
 
-     <section class="sectioncolor">
-        <div class="toppicturetext">
-            <div class="toppicture">
-                <div class="toppicturelrtext">
-                    <div class="toppicturelefttext">
+    <main> 
+
+        <section class="top-banner">
+            <div class="banner-border">
+                <img src="/pictures/hiking2edit.jpeg" alt="">
+                <div class="banner-text">
+                    <div class="text-left">
                         <p>Pushing the</p>
                         <p><span>COMFORT ZONE</span></p>
                     </div>
-                    <div class="toppicturerighttext">
-                        <a href=""><p><span>20%</span></p></a>
+                    <div class="text-right">
+                        <a href="allproducts.html">20%</a>
                         <p>off all jackets</p>
                     </div>
                 </div>
-                <img src="/pictures/hiking2edit.jpeg" alt="">
             </div>
-        </div>
+        </section>
 
-        <section class="ourproductsec">
-            <div class="ourproductsinline" id="productparent">
-                <div class="ourproductsec1">
-                    <a href="allproducts.html" class="ourproductssec1link">
-                        <div class="ourproduct1sec" id="productchild">
-                            <img src="/pictures/RainyDays_Jacket1.jpg" alt="">
-                            <div class="ourproductname">
-                              All Jackets
-                            </div>
+        <section class="shortcut-section">
+            <div class="shortcut-border">
+                <div class="all-shortcuts">
+                    <a href="allproducts.html" class="shortcut">
+                        <img src="/pictures/Urban Fashion Duo.jpeg" alt="">
+                        <div class="shortcut-title">
+                            All Jackets
                         </div>
                     </a>
-                </div>
-                <div class="ourproductsec1">
-                    <a href="allproducts.html" class="ourproductssec1link">
-                        <div class="ourproduct2sec">
-                            <img src="/pictures/RainyDays_Jacket2.jpg" alt="">
-                            <div class="ourproductname">
-                              Bestsellers
-                            </div>
+                    <a href="allproducts.html" class="shortcut">
+                        <img src="/pictures/Urban Winter Fashionista.jpeg" alt="">
+                        <div class="shortcut-title">
+                            Best Sellers
                         </div>
                     </a>
-                </div>
-                <div class="ourproductsec1">
-                    <a href="" class="ourproductssec1link">
-                        <div class="ourproduct3sec">
-                            <img src="/pictures/hikingtrail.jpg" alt="">
-                            <div class="ourproductname">
-                              News
-                            </div>
+                    <a href="allproducts.html" class="shortcut">
+                        <img src="/pictures/hikingtrail.jpg" alt="">
+                        <div class="shortcut-title">
+                            What's New?
                         </div>
                     </a>
-                </div>
-                <div class="ourproductsec1">
-                    <a href="" class="ourproductssec1link">
-                        <div class="ourproduct4sec">
-                            <img src="/pictures/canoeing2.jpg" alt="">
-                            <div class="ourproductname">
-                              Tips
-                            </div>
+                    <a href="allproducts.html" class="shortcut">
+                        <img src="/pictures/Canyon Companions in Ethereal Light.jpeg" alt="">
+                        <div class="shortcut-title">
+                            Tips
                         </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="middlepicturesec">
-            <div class="middlepicture">
+        <section class="break-section">
+            <div class="break-content">
                 <img src="pictures/backpackingsnow.jpg" alt="">
-                <div class="middlepicturetext">
-                    <div class="middlepicturetextlogo">
-                        <img src="pictures/RainyDays_Logowhitemountain.png" alt="">
-                    </div>
+                <div class="break-text">
+                    <img src="pictures/RainyDays_Logowhitemountain.png" alt="" class="break-logo">
                     <p>our tips for</p>
-                    <p><span>ANY TRIP</span></p>
-                    <div class="middlepicturebutton">
+                    <span>ANY TRIP</span>
+                    <div class="break-button">
                         <p>check out here</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bottomproducts">
-            <h2>Our New Products</h2>
-
-            <div class="bottomproducts-inline">
-
+        <section class="featured-section">
+            <div class="featured-border">
+                <h2>Popular Choices</h2>
+                <div class="featured-products">
+                </div>
+                <a href="allproducts.html" class="featured-more">See More</a>
             </div>
-
         </section>
-    </section>
-    
+
+    </main>
 
     <footer>
         <div class="footertext">
@@ -186,8 +161,7 @@
             <img src="/pictures/RainyDays_Logowhite.png" alt="">
         </div>
     </footer>
-
-    </main>
+    
 </body>
 
 <script>

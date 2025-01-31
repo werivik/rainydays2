@@ -11,71 +11,64 @@
       
         <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous">
         </script>
-        <link rel="stylesheet" type="text/css" href="CSS\style.css">
-        <!-- <script type="module" src="js/productdetail.js"></script> -->
         <script type="module" src="js/checkout.js" defer></script>
+
+        <link rel="stylesheet" href="/CSS/header.css">
+        <link rel="stylesheet" href="/CSS/body.css">
+        <link rel="stylesheet" href="/CSS/footer.css">
+        <link rel="stylesheet" href="/CSS/checkout.css">        
       
     </head>
 
 <body>
 
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
+            </div>
+            <li class="links">
+                <a href="index.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Homepage</a>
+                <a href="allproducts.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">All Jackets</a>
+                <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">News</a>
+                <a href="error.html"><img src="/pictures/RainyDays_LogoMountain.png" alt="">Tips</a>
+                <div class="container-searchbar">
+                    <input id="searchbar"
+                           onkeyup="search_jackets()"
+                           type="text" name="search"
+                           placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
+             
+                </div>
+            </li>
+            <li class="head-right">
+                <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i class="fa-regular fa-circle-user"></i>
+            </li>
+        </nav>
+        <div class="colorline">
+            <p>Free shipping for orders over 850kr</p>
+         </div>
+    </header>
+
     <main> 
 
-     <header>
-        <div class="logo">
-            <a href="index.html"><img src="/pictures/RainyDays_LogoCut.png" alt=""></a>          
-        </div>
-    
-        <nav class="menu">
-           <ul>
-            <li>
-                <a href="index.html">Homepage</a>
-            </li>
-            <li>
-                <a href="allproducts.html">All Jakcets</a>
-           </li>
-            <li class="shortlink">
-                <a href="error.html">News</a>
-            </li>
-            <li class="shortlink">
-             <a href="error.html">Tips</a>
-            </li>
-            </ul>
-            <div class="container-searchbar">
-                <input id="searchbar"
-                       onkeyup="search_jackets()"
-                       type="text" name="search"
-                       placeholder="What are you looking for? "><i class="fa-solid fa-magnifying-glass"></i>
-         
+        <section class="checkout-section">
+            <div class="checkout-border">
+
+                <div class="checkoutcontainer">
+                    <h1>Checkout</h1>
+                    <div class="basket-checkout">
+                        <div id="basketContainer">
+                        </div>
+                        <div class="cart-controll-buttons">
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <ul>
-                <li class="headright">
-                    <a href="checkout.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                    <i class="fa-regular fa-circle-user"></i>
-                </li>
-            </ul>
-        </nav>
-     </header>
+        </section>
 
-     <div class="colorline">
-        <p>Free shipping for orders over 850kr</p>
-     </div>
-
-     <section class="sectioncolor">
-
-        <div class="allproductstoppicturetext">
-        </div>
-
-        <div class="checkoutcontainer">
-
-            <h1>Checkout</h1>
-
-            <div id="basketContainer">
-            </div>
-
-        </div>
-
-     </section>
+    </main>
 
     <footer>
         <div class="footertext">
@@ -114,7 +107,5 @@
         </div>
     </footer>
 
-    </main>
 </body>
-
 </html> 
